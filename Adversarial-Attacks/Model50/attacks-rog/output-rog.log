@@ -1,0 +1,2345 @@
+Requirement already satisfied: torchvision in ./y/envs/thesis_env_310/lib/python3.10/site-packages (0.20.1+cu121)
+Requirement already satisfied: tqdm in ./y/envs/thesis_env_310/lib/python3.10/site-packages (4.67.1)
+Requirement already satisfied: numpy in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (2.1.2)
+Requirement already satisfied: torch==2.5.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (2.5.1+cu121)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (11.0.0)
+Requirement already satisfied: filelock in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (4.12.2)
+Requirement already satisfied: networkx in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.3)
+Requirement already satisfied: jinja2 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.1.4)
+Requirement already satisfied: fsspec in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (2024.6.1)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: triton==3.1.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.1.0)
+Requirement already satisfied: sympy==1.13.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (1.13.1)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from sympy==1.13.1->torch==2.5.1->torchvision) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from jinja2->torch==2.5.1->torchvision) (2.1.5)
+Using device: cuda
+Device name: Tesla V100-SXM2-16GB
+Using 1 GPUs.
+
+
+=== [1/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/modad/129522A9D27E7B09A1868D0451BA5BACBA47E6BAB6D062F63343AEF35C6B8473.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.5050
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 1992 with confidence 0.2914!
+
+Targeted adversarial image created in 3262 iterations.
+Benign first predicted at iteration 1992 with confidence 0.2914.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0006
+Iteration 3: Benign prob = 0.0008
+Iteration 4: Benign prob = 0.0009
+Iteration 5: Benign prob = 0.0011
+Iteration 6: Benign prob = 0.0016
+Iteration 8: Benign prob = 0.0019
+Iteration 15: Benign prob = 0.0020
+Iteration 16: Benign prob = 0.0022
+Iteration 17: Benign prob = 0.0022
+Iteration 20: Benign prob = 0.0022
+Iteration 21: Benign prob = 0.0025
+Iteration 32: Benign prob = 0.0025
+Iteration 33: Benign prob = 0.0026
+Iteration 37: Benign prob = 0.0027
+Iteration 39: Benign prob = 0.0028
+Iteration 60: Benign prob = 0.0028
+Iteration 61: Benign prob = 0.0030
+Iteration 62: Benign prob = 0.0030
+Iteration 75: Benign prob = 0.0032
+Iteration 95: Benign prob = 0.0033
+Iteration 96: Benign prob = 0.0036
+Iteration 98: Benign prob = 0.0036
+Iteration 105: Benign prob = 0.0036
+Iteration 106: Benign prob = 0.0037
+Iteration 109: Benign prob = 0.0038
+Iteration 114: Benign prob = 0.0039
+Iteration 117: Benign prob = 0.0039
+Iteration 122: Benign prob = 0.0039
+Iteration 125: Benign prob = 0.0040
+Iteration 128: Benign prob = 0.0043
+Iteration 145: Benign prob = 0.0045
+Iteration 147: Benign prob = 0.0046
+Iteration 154: Benign prob = 0.0048
+Iteration 168: Benign prob = 0.0049
+Iteration 172: Benign prob = 0.0050
+Iteration 174: Benign prob = 0.0051
+Iteration 178: Benign prob = 0.0052
+Iteration 187: Benign prob = 0.0052
+Iteration 188: Benign prob = 0.0053
+Iteration 203: Benign prob = 0.0057
+Iteration 219: Benign prob = 0.0057
+Iteration 222: Benign prob = 0.0058
+Iteration 224: Benign prob = 0.0060
+Iteration 226: Benign prob = 0.0064
+Iteration 235: Benign prob = 0.0065
+Iteration 243: Benign prob = 0.0075
+Iteration 247: Benign prob = 0.0075
+Iteration 249: Benign prob = 0.0079
+Iteration 273: Benign prob = 0.0079
+Iteration 285: Benign prob = 0.0082
+Iteration 289: Benign prob = 0.0104
+Iteration 298: Benign prob = 0.0107
+Iteration 300: Benign prob = 0.0112
+Iteration 307: Benign prob = 0.0113
+Iteration 313: Benign prob = 0.0114
+Iteration 317: Benign prob = 0.0122
+Iteration 320: Benign prob = 0.0125
+Iteration 321: Benign prob = 0.0132
+Iteration 340: Benign prob = 0.0133
+Iteration 356: Benign prob = 0.0141
+Iteration 369: Benign prob = 0.0143
+Iteration 390: Benign prob = 0.0146
+Iteration 402: Benign prob = 0.0151
+Iteration 406: Benign prob = 0.0151
+Iteration 425: Benign prob = 0.0154
+Iteration 427: Benign prob = 0.0155
+Iteration 428: Benign prob = 0.0166
+Iteration 433: Benign prob = 0.0171
+Iteration 444: Benign prob = 0.0188
+Iteration 479: Benign prob = 0.0191
+Iteration 502: Benign prob = 0.0196
+Iteration 505: Benign prob = 0.0209
+Iteration 509: Benign prob = 0.0210
+Iteration 525: Benign prob = 0.0218
+Iteration 549: Benign prob = 0.0219
+Iteration 559: Benign prob = 0.0227
+Iteration 583: Benign prob = 0.0231
+Iteration 590: Benign prob = 0.0233
+Iteration 602: Benign prob = 0.0235
+Iteration 610: Benign prob = 0.0244
+Iteration 612: Benign prob = 0.0251
+Iteration 617: Benign prob = 0.0255
+Iteration 623: Benign prob = 0.0272
+Iteration 644: Benign prob = 0.0272
+Iteration 660: Benign prob = 0.0276
+Iteration 661: Benign prob = 0.0280
+Iteration 663: Benign prob = 0.0281
+Iteration 685: Benign prob = 0.0289
+Iteration 696: Benign prob = 0.0293
+Iteration 697: Benign prob = 0.0295
+Iteration 702: Benign prob = 0.0301
+Iteration 703: Benign prob = 0.0322
+Iteration 705: Benign prob = 0.0326
+Iteration 717: Benign prob = 0.0344
+Iteration 748: Benign prob = 0.0352
+Iteration 755: Benign prob = 0.0363
+Iteration 761: Benign prob = 0.0395
+Iteration 779: Benign prob = 0.0395
+Iteration 785: Benign prob = 0.0436
+Iteration 801: Benign prob = 0.0443
+Iteration 816: Benign prob = 0.0461
+Iteration 819: Benign prob = 0.0474
+Iteration 848: Benign prob = 0.0508
+Iteration 863: Benign prob = 0.0512
+Iteration 864: Benign prob = 0.0543
+Iteration 878: Benign prob = 0.0565
+Iteration 892: Benign prob = 0.0568
+Iteration 919: Benign prob = 0.0592
+Iteration 945: Benign prob = 0.0615
+Iteration 995: Benign prob = 0.0623
+Iteration 998: Benign prob = 0.0639
+Iteration 1012: Benign prob = 0.0647
+Iteration 1035: Benign prob = 0.0675
+Iteration 1046: Benign prob = 0.0679
+Iteration 1060: Benign prob = 0.0696
+Iteration 1062: Benign prob = 0.0723
+Iteration 1063: Benign prob = 0.0731
+Iteration 1072: Benign prob = 0.0733
+Iteration 1077: Benign prob = 0.0745
+Iteration 1087: Benign prob = 0.0747
+Iteration 1094: Benign prob = 0.0860
+Iteration 1123: Benign prob = 0.0864
+Iteration 1136: Benign prob = 0.0880
+Iteration 1150: Benign prob = 0.0886
+Iteration 1165: Benign prob = 0.0886
+Iteration 1171: Benign prob = 0.0894
+Iteration 1192: Benign prob = 0.0931
+Iteration 1216: Benign prob = 0.0942
+Iteration 1226: Benign prob = 0.0951
+Iteration 1237: Benign prob = 0.0960
+Iteration 1244: Benign prob = 0.1012
+Iteration 1296: Benign prob = 0.1028
+Iteration 1299: Benign prob = 0.1099
+Iteration 1318: Benign prob = 0.1133
+Iteration 1353: Benign prob = 0.1182
+Iteration 1357: Benign prob = 0.1191
+Iteration 1374: Benign prob = 0.1213
+Iteration 1390: Benign prob = 0.1277
+Iteration 1394: Benign prob = 0.1299
+Iteration 1396: Benign prob = 0.1309
+Iteration 1399: Benign prob = 0.1317
+Iteration 1419: Benign prob = 0.1328
+Iteration 1442: Benign prob = 0.1343
+Iteration 1449: Benign prob = 0.1426
+Iteration 1480: Benign prob = 0.1481
+Iteration 1485: Benign prob = 0.1516
+Iteration 1518: Benign prob = 0.1525
+Iteration 1542: Benign prob = 0.1587
+Iteration 1566: Benign prob = 0.1589
+Iteration 1567: Benign prob = 0.1633
+Iteration 1581: Benign prob = 0.1642
+Iteration 1600: Benign prob = 0.1711
+Iteration 1650: Benign prob = 0.1719
+Iteration 1659: Benign prob = 0.1818
+Iteration 1671: Benign prob = 0.1920
+Iteration 1694: Benign prob = 0.1936
+Iteration 1696: Benign prob = 0.1983
+Iteration 1732: Benign prob = 0.2054
+Iteration 1761: Benign prob = 0.2109
+Iteration 1772: Benign prob = 0.2190
+Iteration 1791: Benign prob = 0.2194
+Iteration 1818: Benign prob = 0.2244
+Iteration 1855: Benign prob = 0.2307
+Iteration 1861: Benign prob = 0.2336
+Iteration 1880: Benign prob = 0.2358
+Iteration 1902: Benign prob = 0.2405
+Iteration 1910: Benign prob = 0.2413
+Iteration 1931: Benign prob = 0.2578
+Iteration 1932: Benign prob = 0.2597
+Iteration 1937: Benign prob = 0.2771
+Iteration 1992: Benign prob = 0.2914
+Iteration 2000: Benign prob = 0.2953
+Iteration 2041: Benign prob = 0.3006
+Iteration 2096: Benign prob = 0.3075
+Iteration 2105: Benign prob = 0.3143
+Iteration 2120: Benign prob = 0.3210
+Iteration 2164: Benign prob = 0.3248
+Iteration 2168: Benign prob = 0.3350
+Iteration 2240: Benign prob = 0.3366
+Iteration 2270: Benign prob = 0.3474
+Iteration 2287: Benign prob = 0.3515
+Iteration 2290: Benign prob = 0.3518
+Iteration 2326: Benign prob = 0.3576
+Iteration 2360: Benign prob = 0.3641
+Iteration 2373: Benign prob = 0.3675
+Iteration 2389: Benign prob = 0.3675
+Iteration 2405: Benign prob = 0.3680
+Iteration 2434: Benign prob = 0.3696
+Iteration 2440: Benign prob = 0.3732
+Iteration 2482: Benign prob = 0.3775
+Iteration 2577: Benign prob = 0.3821
+Iteration 2595: Benign prob = 0.3857
+Iteration 2597: Benign prob = 0.3868
+Iteration 2619: Benign prob = 0.3870
+Iteration 2620: Benign prob = 0.3902
+Iteration 2657: Benign prob = 0.3904
+Iteration 2695: Benign prob = 0.3957
+Iteration 2696: Benign prob = 0.3970
+Iteration 2738: Benign prob = 0.4015
+Iteration 2751: Benign prob = 0.4070
+Iteration 2784: Benign prob = 0.4129
+Iteration 2793: Benign prob = 0.4143
+Iteration 2796: Benign prob = 0.4166
+Iteration 2826: Benign prob = 0.4210
+Iteration 2831: Benign prob = 0.4227
+Iteration 2840: Benign prob = 0.4291
+Iteration 2858: Benign prob = 0.4336
+Iteration 2877: Benign prob = 0.4381
+Iteration 2881: Benign prob = 0.4489
+Iteration 2883: Benign prob = 0.4627
+Iteration 2914: Benign prob = 0.4679
+Iteration 2919: Benign prob = 0.4720
+Iteration 2937: Benign prob = 0.4760
+Iteration 2940: Benign prob = 0.4787
+Iteration 2979: Benign prob = 0.4804
+Iteration 2986: Benign prob = 0.4853
+Iteration 3020: Benign prob = 0.4917
+Iteration 3029: Benign prob = 0.4952
+Iteration 3048: Benign prob = 0.4954
+Iteration 3080: Benign prob = 0.4994
+Iteration 3081: Benign prob = 0.5094
+Iteration 3131: Benign prob = 0.5096
+Iteration 3142: Benign prob = 0.5136
+Iteration 3146: Benign prob = 0.5158
+Iteration 3158: Benign prob = 0.5163
+Iteration 3159: Benign prob = 0.5251
+Iteration 3167: Benign prob = 0.5264
+Iteration 3189: Benign prob = 0.5305
+Iteration 3204: Benign prob = 0.5458
+Iteration 3262: Benign prob = 0.5605
+
+ Completed Adversarial Image for image 1 in 5.25 minutes.
+
+--- Adversarial Prediction Results for image 1: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/modad/129522A9D27E7B09A1868D0451BA5BACBA47E6BAB6D062F63343AEF35C6B8473.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5605
+True class     : 32 (rog)
+
+
+=== [2/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/modad/566795E2AB2C691C1F6CD618422508B25BD41D289EB88D15640176B93B6B4E98.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.4437
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 839 with confidence 0.3376!
+
+Targeted adversarial image created in 1509 iterations.
+Benign first predicted at iteration 839 with confidence 0.3376.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0024
+Iteration 150: Benign prob = 0.0027
+Iteration 151: Benign prob = 0.0028
+Iteration 153: Benign prob = 0.0032
+Iteration 154: Benign prob = 0.0033
+Iteration 155: Benign prob = 0.0038
+Iteration 156: Benign prob = 0.0043
+Iteration 157: Benign prob = 0.0046
+Iteration 158: Benign prob = 0.0047
+Iteration 159: Benign prob = 0.0057
+Iteration 161: Benign prob = 0.0058
+Iteration 162: Benign prob = 0.0064
+Iteration 164: Benign prob = 0.0066
+Iteration 166: Benign prob = 0.0073
+Iteration 167: Benign prob = 0.0074
+Iteration 169: Benign prob = 0.0082
+Iteration 171: Benign prob = 0.0084
+Iteration 172: Benign prob = 0.0095
+Iteration 175: Benign prob = 0.0097
+Iteration 176: Benign prob = 0.0108
+Iteration 180: Benign prob = 0.0114
+Iteration 185: Benign prob = 0.0118
+Iteration 188: Benign prob = 0.0119
+Iteration 190: Benign prob = 0.0120
+Iteration 191: Benign prob = 0.0129
+Iteration 192: Benign prob = 0.0129
+Iteration 193: Benign prob = 0.0133
+Iteration 194: Benign prob = 0.0135
+Iteration 195: Benign prob = 0.0155
+Iteration 198: Benign prob = 0.0157
+Iteration 202: Benign prob = 0.0166
+Iteration 205: Benign prob = 0.0198
+Iteration 206: Benign prob = 0.0200
+Iteration 208: Benign prob = 0.0219
+Iteration 214: Benign prob = 0.0223
+Iteration 223: Benign prob = 0.0240
+Iteration 225: Benign prob = 0.0250
+Iteration 232: Benign prob = 0.0256
+Iteration 233: Benign prob = 0.0259
+Iteration 235: Benign prob = 0.0266
+Iteration 238: Benign prob = 0.0286
+Iteration 241: Benign prob = 0.0294
+Iteration 242: Benign prob = 0.0338
+Iteration 274: Benign prob = 0.0371
+Iteration 280: Benign prob = 0.0377
+Iteration 283: Benign prob = 0.0379
+Iteration 286: Benign prob = 0.0440
+Iteration 288: Benign prob = 0.0445
+Iteration 289: Benign prob = 0.0464
+Iteration 295: Benign prob = 0.0467
+Iteration 298: Benign prob = 0.0468
+Iteration 305: Benign prob = 0.0478
+Iteration 313: Benign prob = 0.0518
+Iteration 335: Benign prob = 0.0591
+Iteration 344: Benign prob = 0.0713
+Iteration 362: Benign prob = 0.0728
+Iteration 369: Benign prob = 0.0732
+Iteration 371: Benign prob = 0.0749
+Iteration 372: Benign prob = 0.0768
+Iteration 376: Benign prob = 0.0837
+Iteration 381: Benign prob = 0.0843
+Iteration 395: Benign prob = 0.0882
+Iteration 413: Benign prob = 0.0932
+Iteration 429: Benign prob = 0.0949
+Iteration 448: Benign prob = 0.0994
+Iteration 468: Benign prob = 0.0995
+Iteration 469: Benign prob = 0.1117
+Iteration 473: Benign prob = 0.1118
+Iteration 475: Benign prob = 0.1180
+Iteration 487: Benign prob = 0.1182
+Iteration 494: Benign prob = 0.1250
+Iteration 495: Benign prob = 0.1260
+Iteration 501: Benign prob = 0.1266
+Iteration 503: Benign prob = 0.1294
+Iteration 506: Benign prob = 0.1324
+Iteration 512: Benign prob = 0.1408
+Iteration 519: Benign prob = 0.1455
+Iteration 523: Benign prob = 0.1528
+Iteration 530: Benign prob = 0.1559
+Iteration 532: Benign prob = 0.1575
+Iteration 536: Benign prob = 0.1602
+Iteration 538: Benign prob = 0.1652
+Iteration 542: Benign prob = 0.1732
+Iteration 561: Benign prob = 0.1764
+Iteration 564: Benign prob = 0.1824
+Iteration 575: Benign prob = 0.1881
+Iteration 577: Benign prob = 0.1915
+Iteration 601: Benign prob = 0.2037
+Iteration 637: Benign prob = 0.2110
+Iteration 643: Benign prob = 0.2331
+Iteration 654: Benign prob = 0.2358
+Iteration 657: Benign prob = 0.2360
+Iteration 661: Benign prob = 0.2449
+Iteration 665: Benign prob = 0.2455
+Iteration 674: Benign prob = 0.2539
+Iteration 704: Benign prob = 0.2574
+Iteration 707: Benign prob = 0.2611
+Iteration 729: Benign prob = 0.2631
+Iteration 748: Benign prob = 0.2645
+Iteration 751: Benign prob = 0.2714
+Iteration 760: Benign prob = 0.2718
+Iteration 763: Benign prob = 0.2750
+Iteration 766: Benign prob = 0.2770
+Iteration 768: Benign prob = 0.2817
+Iteration 773: Benign prob = 0.3012
+Iteration 791: Benign prob = 0.3017
+Iteration 794: Benign prob = 0.3162
+Iteration 835: Benign prob = 0.3246
+Iteration 839: Benign prob = 0.3376
+Iteration 871: Benign prob = 0.3562
+Iteration 889: Benign prob = 0.3600
+Iteration 893: Benign prob = 0.3667
+Iteration 927: Benign prob = 0.3703
+Iteration 930: Benign prob = 0.3739
+Iteration 938: Benign prob = 0.3753
+Iteration 960: Benign prob = 0.3859
+Iteration 975: Benign prob = 0.3965
+Iteration 1010: Benign prob = 0.4041
+Iteration 1028: Benign prob = 0.4054
+Iteration 1037: Benign prob = 0.4103
+Iteration 1046: Benign prob = 0.4151
+Iteration 1054: Benign prob = 0.4180
+Iteration 1071: Benign prob = 0.4218
+Iteration 1091: Benign prob = 0.4326
+Iteration 1114: Benign prob = 0.4333
+Iteration 1116: Benign prob = 0.4340
+Iteration 1133: Benign prob = 0.4344
+Iteration 1138: Benign prob = 0.4569
+Iteration 1188: Benign prob = 0.4583
+Iteration 1189: Benign prob = 0.4619
+Iteration 1204: Benign prob = 0.4925
+Iteration 1294: Benign prob = 0.4935
+Iteration 1304: Benign prob = 0.5052
+Iteration 1317: Benign prob = 0.5061
+Iteration 1339: Benign prob = 0.5113
+Iteration 1340: Benign prob = 0.5145
+Iteration 1356: Benign prob = 0.5158
+Iteration 1357: Benign prob = 0.5162
+Iteration 1406: Benign prob = 0.5170
+Iteration 1410: Benign prob = 0.5181
+Iteration 1418: Benign prob = 0.5484
+Iteration 1509: Benign prob = 0.5560
+
+ Completed Adversarial Image for image 2 in 2.44 minutes.
+
+--- Adversarial Prediction Results for image 2: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/modad/566795E2AB2C691C1F6CD618422508B25BD41D289EB88D15640176B93B6B4E98.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5560
+True class     : 32 (rog)
+
+
+=== [3/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/genpua/87B1F7351360A06D20C44D552EE2A9979488210305DDAEC4FD68C8C3C095988D.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.3653
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 826 with confidence 0.3418!
+
+Targeted adversarial image created in 1306 iterations.
+Benign first predicted at iteration 826 with confidence 0.3418.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0009
+Iteration 4: Benign prob = 0.0013
+Iteration 5: Benign prob = 0.0016
+Iteration 8: Benign prob = 0.0017
+Iteration 10: Benign prob = 0.0018
+Iteration 12: Benign prob = 0.0018
+Iteration 13: Benign prob = 0.0019
+Iteration 15: Benign prob = 0.0021
+Iteration 17: Benign prob = 0.0021
+Iteration 19: Benign prob = 0.0022
+Iteration 21: Benign prob = 0.0027
+Iteration 23: Benign prob = 0.0027
+Iteration 25: Benign prob = 0.0028
+Iteration 28: Benign prob = 0.0028
+Iteration 32: Benign prob = 0.0030
+Iteration 34: Benign prob = 0.0031
+Iteration 36: Benign prob = 0.0031
+Iteration 37: Benign prob = 0.0031
+Iteration 39: Benign prob = 0.0036
+Iteration 47: Benign prob = 0.0036
+Iteration 48: Benign prob = 0.0037
+Iteration 51: Benign prob = 0.0040
+Iteration 56: Benign prob = 0.0043
+Iteration 58: Benign prob = 0.0048
+Iteration 64: Benign prob = 0.0058
+Iteration 80: Benign prob = 0.0060
+Iteration 81: Benign prob = 0.0060
+Iteration 84: Benign prob = 0.0062
+Iteration 87: Benign prob = 0.0062
+Iteration 88: Benign prob = 0.0069
+Iteration 90: Benign prob = 0.0069
+Iteration 94: Benign prob = 0.0070
+Iteration 107: Benign prob = 0.0074
+Iteration 108: Benign prob = 0.0075
+Iteration 111: Benign prob = 0.0076
+Iteration 112: Benign prob = 0.0079
+Iteration 118: Benign prob = 0.0081
+Iteration 124: Benign prob = 0.0081
+Iteration 127: Benign prob = 0.0092
+Iteration 132: Benign prob = 0.0097
+Iteration 133: Benign prob = 0.0123
+Iteration 137: Benign prob = 0.0129
+Iteration 141: Benign prob = 0.0135
+Iteration 147: Benign prob = 0.0136
+Iteration 149: Benign prob = 0.0153
+Iteration 155: Benign prob = 0.0155
+Iteration 160: Benign prob = 0.0170
+Iteration 166: Benign prob = 0.0172
+Iteration 169: Benign prob = 0.0179
+Iteration 170: Benign prob = 0.0181
+Iteration 172: Benign prob = 0.0188
+Iteration 175: Benign prob = 0.0189
+Iteration 176: Benign prob = 0.0198
+Iteration 182: Benign prob = 0.0272
+Iteration 191: Benign prob = 0.0276
+Iteration 194: Benign prob = 0.0320
+Iteration 200: Benign prob = 0.0370
+Iteration 202: Benign prob = 0.0383
+Iteration 205: Benign prob = 0.0397
+Iteration 213: Benign prob = 0.0399
+Iteration 217: Benign prob = 0.0471
+Iteration 218: Benign prob = 0.0496
+Iteration 232: Benign prob = 0.0500
+Iteration 234: Benign prob = 0.0523
+Iteration 239: Benign prob = 0.0548
+Iteration 249: Benign prob = 0.0606
+Iteration 262: Benign prob = 0.0631
+Iteration 265: Benign prob = 0.0642
+Iteration 272: Benign prob = 0.0650
+Iteration 276: Benign prob = 0.0651
+Iteration 278: Benign prob = 0.0666
+Iteration 279: Benign prob = 0.0718
+Iteration 293: Benign prob = 0.0735
+Iteration 298: Benign prob = 0.0820
+Iteration 307: Benign prob = 0.0859
+Iteration 326: Benign prob = 0.0863
+Iteration 331: Benign prob = 0.0870
+Iteration 333: Benign prob = 0.0884
+Iteration 343: Benign prob = 0.1018
+Iteration 363: Benign prob = 0.1051
+Iteration 372: Benign prob = 0.1066
+Iteration 377: Benign prob = 0.1108
+Iteration 379: Benign prob = 0.1178
+Iteration 386: Benign prob = 0.1187
+Iteration 399: Benign prob = 0.1245
+Iteration 401: Benign prob = 0.1294
+Iteration 418: Benign prob = 0.1315
+Iteration 428: Benign prob = 0.1353
+Iteration 444: Benign prob = 0.1409
+Iteration 467: Benign prob = 0.1526
+Iteration 472: Benign prob = 0.1595
+Iteration 478: Benign prob = 0.1624
+Iteration 480: Benign prob = 0.1645
+Iteration 484: Benign prob = 0.1788
+Iteration 493: Benign prob = 0.1852
+Iteration 522: Benign prob = 0.1873
+Iteration 539: Benign prob = 0.1887
+Iteration 545: Benign prob = 0.1997
+Iteration 553: Benign prob = 0.2056
+Iteration 575: Benign prob = 0.2071
+Iteration 580: Benign prob = 0.2150
+Iteration 590: Benign prob = 0.2240
+Iteration 597: Benign prob = 0.2242
+Iteration 599: Benign prob = 0.2417
+Iteration 634: Benign prob = 0.2450
+Iteration 644: Benign prob = 0.2528
+Iteration 658: Benign prob = 0.2530
+Iteration 664: Benign prob = 0.2533
+Iteration 668: Benign prob = 0.2710
+Iteration 681: Benign prob = 0.2714
+Iteration 695: Benign prob = 0.2783
+Iteration 721: Benign prob = 0.2926
+Iteration 727: Benign prob = 0.2928
+Iteration 730: Benign prob = 0.2928
+Iteration 740: Benign prob = 0.3100
+Iteration 746: Benign prob = 0.3132
+Iteration 751: Benign prob = 0.3182
+Iteration 795: Benign prob = 0.3241
+Iteration 797: Benign prob = 0.3303
+Iteration 826: Benign prob = 0.3418
+Iteration 828: Benign prob = 0.3502
+Iteration 871: Benign prob = 0.3616
+Iteration 885: Benign prob = 0.3635
+Iteration 920: Benign prob = 0.3651
+Iteration 931: Benign prob = 0.3822
+Iteration 934: Benign prob = 0.3883
+Iteration 955: Benign prob = 0.3937
+Iteration 956: Benign prob = 0.3945
+Iteration 965: Benign prob = 0.3994
+Iteration 994: Benign prob = 0.4139
+Iteration 996: Benign prob = 0.4157
+Iteration 1005: Benign prob = 0.4225
+Iteration 1036: Benign prob = 0.4267
+Iteration 1045: Benign prob = 0.4321
+Iteration 1051: Benign prob = 0.4400
+Iteration 1055: Benign prob = 0.4464
+Iteration 1068: Benign prob = 0.4553
+Iteration 1083: Benign prob = 0.4668
+Iteration 1084: Benign prob = 0.4760
+Iteration 1095: Benign prob = 0.4762
+Iteration 1099: Benign prob = 0.4907
+Iteration 1100: Benign prob = 0.5190
+Iteration 1170: Benign prob = 0.5260
+Iteration 1176: Benign prob = 0.5445
+Iteration 1262: Benign prob = 0.5458
+Iteration 1306: Benign prob = 0.5557
+
+ Completed Adversarial Image for image 3 in 2.10 minutes.
+
+--- Adversarial Prediction Results for image 3: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/genpua/87B1F7351360A06D20C44D552EE2A9979488210305DDAEC4FD68C8C3C095988D.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5557
+True class     : 32 (rog)
+
+
+=== [4/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/genpua/BF89FEC21FD7005FA072ADCE0BF6C8F28D3E831AC67D1103D6383150E4142AC3.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.4413
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 6572 with confidence 0.3006!
+
+Failed to generate adversarial image in 10000 iterations.
+Benign first predicted at iteration 6572 with confidence 0.3006.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0008
+Iteration 1: Benign prob = 0.0009
+Iteration 5: Benign prob = 0.0009
+Iteration 6: Benign prob = 0.0014
+Iteration 7: Benign prob = 0.0016
+Iteration 8: Benign prob = 0.0018
+Iteration 11: Benign prob = 0.0018
+Iteration 12: Benign prob = 0.0021
+Iteration 13: Benign prob = 0.0021
+Iteration 15: Benign prob = 0.0023
+Iteration 16: Benign prob = 0.0025
+Iteration 17: Benign prob = 0.0027
+Iteration 18: Benign prob = 0.0027
+Iteration 19: Benign prob = 0.0027
+Iteration 20: Benign prob = 0.0030
+Iteration 23: Benign prob = 0.0030
+Iteration 27: Benign prob = 0.0030
+Iteration 28: Benign prob = 0.0032
+Iteration 30: Benign prob = 0.0035
+Iteration 31: Benign prob = 0.0036
+Iteration 34: Benign prob = 0.0038
+Iteration 36: Benign prob = 0.0041
+Iteration 48: Benign prob = 0.0042
+Iteration 49: Benign prob = 0.0043
+Iteration 50: Benign prob = 0.0045
+Iteration 54: Benign prob = 0.0048
+Iteration 56: Benign prob = 0.0051
+Iteration 61: Benign prob = 0.0053
+Iteration 66: Benign prob = 0.0055
+Iteration 67: Benign prob = 0.0056
+Iteration 73: Benign prob = 0.0064
+Iteration 89: Benign prob = 0.0066
+Iteration 94: Benign prob = 0.0067
+Iteration 95: Benign prob = 0.0068
+Iteration 96: Benign prob = 0.0069
+Iteration 102: Benign prob = 0.0069
+Iteration 115: Benign prob = 0.0072
+Iteration 118: Benign prob = 0.0078
+Iteration 133: Benign prob = 0.0082
+Iteration 143: Benign prob = 0.0087
+Iteration 153: Benign prob = 0.0088
+Iteration 160: Benign prob = 0.0090
+Iteration 161: Benign prob = 0.0092
+Iteration 168: Benign prob = 0.0095
+Iteration 172: Benign prob = 0.0096
+Iteration 177: Benign prob = 0.0100
+Iteration 192: Benign prob = 0.0100
+Iteration 201: Benign prob = 0.0102
+Iteration 202: Benign prob = 0.0107
+Iteration 214: Benign prob = 0.0108
+Iteration 215: Benign prob = 0.0109
+Iteration 216: Benign prob = 0.0114
+Iteration 217: Benign prob = 0.0115
+Iteration 226: Benign prob = 0.0118
+Iteration 229: Benign prob = 0.0123
+Iteration 232: Benign prob = 0.0124
+Iteration 239: Benign prob = 0.0124
+Iteration 242: Benign prob = 0.0127
+Iteration 252: Benign prob = 0.0130
+Iteration 255: Benign prob = 0.0134
+Iteration 270: Benign prob = 0.0134
+Iteration 274: Benign prob = 0.0147
+Iteration 276: Benign prob = 0.0148
+Iteration 282: Benign prob = 0.0148
+Iteration 287: Benign prob = 0.0149
+Iteration 293: Benign prob = 0.0153
+Iteration 297: Benign prob = 0.0155
+Iteration 325: Benign prob = 0.0157
+Iteration 338: Benign prob = 0.0166
+Iteration 342: Benign prob = 0.0168
+Iteration 346: Benign prob = 0.0171
+Iteration 373: Benign prob = 0.0171
+Iteration 376: Benign prob = 0.0172
+Iteration 379: Benign prob = 0.0174
+Iteration 380: Benign prob = 0.0174
+Iteration 393: Benign prob = 0.0175
+Iteration 399: Benign prob = 0.0180
+Iteration 404: Benign prob = 0.0182
+Iteration 421: Benign prob = 0.0187
+Iteration 425: Benign prob = 0.0191
+Iteration 433: Benign prob = 0.0192
+Iteration 437: Benign prob = 0.0197
+Iteration 447: Benign prob = 0.0199
+Iteration 449: Benign prob = 0.0200
+Iteration 453: Benign prob = 0.0204
+Iteration 463: Benign prob = 0.0204
+Iteration 470: Benign prob = 0.0205
+Iteration 472: Benign prob = 0.0206
+Iteration 484: Benign prob = 0.0209
+Iteration 493: Benign prob = 0.0209
+Iteration 512: Benign prob = 0.0225
+Iteration 567: Benign prob = 0.0227
+Iteration 578: Benign prob = 0.0246
+Iteration 587: Benign prob = 0.0248
+Iteration 616: Benign prob = 0.0252
+Iteration 636: Benign prob = 0.0254
+Iteration 655: Benign prob = 0.0278
+Iteration 681: Benign prob = 0.0286
+Iteration 730: Benign prob = 0.0290
+Iteration 741: Benign prob = 0.0298
+Iteration 743: Benign prob = 0.0309
+Iteration 755: Benign prob = 0.0311
+Iteration 761: Benign prob = 0.0313
+Iteration 771: Benign prob = 0.0318
+Iteration 779: Benign prob = 0.0324
+Iteration 785: Benign prob = 0.0336
+Iteration 812: Benign prob = 0.0339
+Iteration 816: Benign prob = 0.0343
+Iteration 886: Benign prob = 0.0346
+Iteration 894: Benign prob = 0.0348
+Iteration 896: Benign prob = 0.0352
+Iteration 934: Benign prob = 0.0375
+Iteration 942: Benign prob = 0.0378
+Iteration 945: Benign prob = 0.0387
+Iteration 972: Benign prob = 0.0387
+Iteration 981: Benign prob = 0.0392
+Iteration 984: Benign prob = 0.0399
+Iteration 988: Benign prob = 0.0404
+Iteration 990: Benign prob = 0.0409
+Iteration 1015: Benign prob = 0.0429
+Iteration 1019: Benign prob = 0.0449
+Iteration 1036: Benign prob = 0.0453
+Iteration 1060: Benign prob = 0.0457
+Iteration 1082: Benign prob = 0.0468
+Iteration 1106: Benign prob = 0.0474
+Iteration 1122: Benign prob = 0.0487
+Iteration 1123: Benign prob = 0.0487
+Iteration 1138: Benign prob = 0.0494
+Iteration 1158: Benign prob = 0.0506
+Iteration 1181: Benign prob = 0.0534
+Iteration 1189: Benign prob = 0.0535
+Iteration 1204: Benign prob = 0.0540
+Iteration 1278: Benign prob = 0.0546
+Iteration 1299: Benign prob = 0.0553
+Iteration 1307: Benign prob = 0.0564
+Iteration 1323: Benign prob = 0.0565
+Iteration 1324: Benign prob = 0.0569
+Iteration 1338: Benign prob = 0.0569
+Iteration 1354: Benign prob = 0.0573
+Iteration 1368: Benign prob = 0.0586
+Iteration 1375: Benign prob = 0.0591
+Iteration 1379: Benign prob = 0.0599
+Iteration 1384: Benign prob = 0.0606
+Iteration 1398: Benign prob = 0.0609
+Iteration 1401: Benign prob = 0.0612
+Iteration 1407: Benign prob = 0.0625
+Iteration 1413: Benign prob = 0.0634
+Iteration 1446: Benign prob = 0.0653
+Iteration 1487: Benign prob = 0.0671
+Iteration 1498: Benign prob = 0.0674
+Iteration 1537: Benign prob = 0.0675
+Iteration 1552: Benign prob = 0.0676
+Iteration 1553: Benign prob = 0.0686
+Iteration 1570: Benign prob = 0.0704
+Iteration 1615: Benign prob = 0.0713
+Iteration 1640: Benign prob = 0.0720
+Iteration 1735: Benign prob = 0.0725
+Iteration 1760: Benign prob = 0.0767
+Iteration 1767: Benign prob = 0.0772
+Iteration 1881: Benign prob = 0.0796
+Iteration 1889: Benign prob = 0.0800
+Iteration 1890: Benign prob = 0.0803
+Iteration 1939: Benign prob = 0.0803
+Iteration 1972: Benign prob = 0.0852
+Iteration 2009: Benign prob = 0.0855
+Iteration 2098: Benign prob = 0.0859
+Iteration 2099: Benign prob = 0.0882
+Iteration 2119: Benign prob = 0.0894
+Iteration 2120: Benign prob = 0.0937
+Iteration 2140: Benign prob = 0.0986
+Iteration 2163: Benign prob = 0.0997
+Iteration 2223: Benign prob = 0.1028
+Iteration 2248: Benign prob = 0.1036
+Iteration 2278: Benign prob = 0.1054
+Iteration 2307: Benign prob = 0.1055
+Iteration 2335: Benign prob = 0.1075
+Iteration 2373: Benign prob = 0.1093
+Iteration 2422: Benign prob = 0.1127
+Iteration 2505: Benign prob = 0.1133
+Iteration 2506: Benign prob = 0.1136
+Iteration 2562: Benign prob = 0.1139
+Iteration 2604: Benign prob = 0.1143
+Iteration 2638: Benign prob = 0.1161
+Iteration 2695: Benign prob = 0.1174
+Iteration 2723: Benign prob = 0.1228
+Iteration 2725: Benign prob = 0.1242
+Iteration 2866: Benign prob = 0.1257
+Iteration 2917: Benign prob = 0.1285
+Iteration 2926: Benign prob = 0.1292
+Iteration 2983: Benign prob = 0.1306
+Iteration 2994: Benign prob = 0.1357
+Iteration 3078: Benign prob = 0.1373
+Iteration 3202: Benign prob = 0.1378
+Iteration 3210: Benign prob = 0.1383
+Iteration 3215: Benign prob = 0.1404
+Iteration 3231: Benign prob = 0.1424
+Iteration 3387: Benign prob = 0.1443
+Iteration 3434: Benign prob = 0.1448
+Iteration 3450: Benign prob = 0.1485
+Iteration 3511: Benign prob = 0.1493
+Iteration 3523: Benign prob = 0.1514
+Iteration 3549: Benign prob = 0.1518
+Iteration 3560: Benign prob = 0.1523
+Iteration 3585: Benign prob = 0.1533
+Iteration 3603: Benign prob = 0.1538
+Iteration 3620: Benign prob = 0.1549
+Iteration 3622: Benign prob = 0.1614
+Iteration 3701: Benign prob = 0.1622
+Iteration 3714: Benign prob = 0.1698
+Iteration 3826: Benign prob = 0.1709
+Iteration 3878: Benign prob = 0.1711
+Iteration 3882: Benign prob = 0.1715
+Iteration 3902: Benign prob = 0.1720
+Iteration 3926: Benign prob = 0.1779
+Iteration 3999: Benign prob = 0.1801
+Iteration 4063: Benign prob = 0.1889
+Iteration 4237: Benign prob = 0.1897
+Iteration 4326: Benign prob = 0.1912
+Iteration 4341: Benign prob = 0.1916
+Iteration 4376: Benign prob = 0.1937
+Iteration 4422: Benign prob = 0.1999
+Iteration 4563: Benign prob = 0.2061
+Iteration 4674: Benign prob = 0.2078
+Iteration 4758: Benign prob = 0.2087
+Iteration 4765: Benign prob = 0.2095
+Iteration 4779: Benign prob = 0.2110
+Iteration 4850: Benign prob = 0.2228
+Iteration 4911: Benign prob = 0.2253
+Iteration 4957: Benign prob = 0.2258
+Iteration 4988: Benign prob = 0.2263
+Iteration 4989: Benign prob = 0.2295
+Iteration 5016: Benign prob = 0.2313
+Iteration 5040: Benign prob = 0.2328
+Iteration 5109: Benign prob = 0.2332
+Iteration 5361: Benign prob = 0.2353
+Iteration 5422: Benign prob = 0.2442
+Iteration 5445: Benign prob = 0.2518
+Iteration 5509: Benign prob = 0.2545
+Iteration 5548: Benign prob = 0.2557
+Iteration 5578: Benign prob = 0.2568
+Iteration 5591: Benign prob = 0.2601
+Iteration 5597: Benign prob = 0.2661
+Iteration 5705: Benign prob = 0.2668
+Iteration 5707: Benign prob = 0.2669
+Iteration 5848: Benign prob = 0.2682
+Iteration 5970: Benign prob = 0.2707
+Iteration 6058: Benign prob = 0.2804
+Iteration 6081: Benign prob = 0.2805
+Iteration 6160: Benign prob = 0.2868
+Iteration 6283: Benign prob = 0.2878
+Iteration 6306: Benign prob = 0.2888
+Iteration 6310: Benign prob = 0.2912
+Iteration 6414: Benign prob = 0.2949
+Iteration 6417: Benign prob = 0.2952
+Iteration 6471: Benign prob = 0.2957
+Iteration 6509: Benign prob = 0.2961
+Iteration 6530: Benign prob = 0.2963
+Iteration 6572: Benign prob = 0.3006
+Iteration 6598: Benign prob = 0.3053
+Iteration 6854: Benign prob = 0.3062
+Iteration 6898: Benign prob = 0.3080
+Iteration 6907: Benign prob = 0.3099
+Iteration 6948: Benign prob = 0.3134
+Iteration 6976: Benign prob = 0.3136
+Iteration 6979: Benign prob = 0.3172
+Iteration 7103: Benign prob = 0.3215
+Iteration 7268: Benign prob = 0.3242
+Iteration 7272: Benign prob = 0.3286
+Iteration 7368: Benign prob = 0.3295
+Iteration 7372: Benign prob = 0.3298
+Iteration 7388: Benign prob = 0.3340
+Iteration 7424: Benign prob = 0.3371
+Iteration 7488: Benign prob = 0.3373
+Iteration 7506: Benign prob = 0.3393
+Iteration 7538: Benign prob = 0.3456
+Iteration 7588: Benign prob = 0.3472
+Iteration 7675: Benign prob = 0.3496
+Iteration 7692: Benign prob = 0.3531
+Iteration 7828: Benign prob = 0.3544
+Iteration 7901: Benign prob = 0.3544
+Iteration 7947: Benign prob = 0.3591
+Iteration 7952: Benign prob = 0.3649
+Iteration 8039: Benign prob = 0.3676
+Iteration 8106: Benign prob = 0.3719
+Iteration 8249: Benign prob = 0.3754
+Iteration 8285: Benign prob = 0.3781
+Iteration 8366: Benign prob = 0.3817
+Iteration 8378: Benign prob = 0.3835
+Iteration 8453: Benign prob = 0.3872
+Iteration 8538: Benign prob = 0.3911
+Iteration 8542: Benign prob = 0.3922
+Iteration 8679: Benign prob = 0.3930
+Iteration 8688: Benign prob = 0.4025
+Iteration 8829: Benign prob = 0.4072
+Iteration 8955: Benign prob = 0.4093
+Iteration 8981: Benign prob = 0.4126
+Iteration 8992: Benign prob = 0.4134
+Iteration 9019: Benign prob = 0.4171
+Iteration 9075: Benign prob = 0.4176
+Iteration 9132: Benign prob = 0.4199
+Iteration 9181: Benign prob = 0.4204
+Iteration 9221: Benign prob = 0.4247
+Iteration 9267: Benign prob = 0.4269
+Iteration 9394: Benign prob = 0.4270
+Iteration 9443: Benign prob = 0.4276
+Iteration 9484: Benign prob = 0.4293
+Iteration 9597: Benign prob = 0.4297
+Iteration 9608: Benign prob = 0.4303
+Iteration 9620: Benign prob = 0.4344
+Iteration 9661: Benign prob = 0.4357
+Iteration 9698: Benign prob = 0.4366
+Iteration 9780: Benign prob = 0.4395
+Iteration 9859: Benign prob = 0.4439
+Iteration 9943: Benign prob = 0.4458
+Iteration 9954: Benign prob = 0.4500
+
+ Completed Adversarial Image for image 4 in 16.03 minutes.
+
+--- Adversarial Prediction Results for image 4: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/genpua/BF89FEC21FD7005FA072ADCE0BF6C8F28D3E831AC67D1103D6383150E4142AC3.png) ---
+Predicted class: 42 (trojan)
+Confidence     : 0.4413
+True class     : 32 (rog)
+
+
+=== [5/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/gappusinac/1AB923521BD84DA899520C942F76D6CE09F40505F5578787A4B67BA818F4E4CE.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.6207
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 4500 with confidence 0.2798!
+
+Failed to generate adversarial image in 10000 iterations.
+Benign first predicted at iteration 4500 with confidence 0.2798.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0005
+Iteration 1: Benign prob = 0.0005
+Iteration 2: Benign prob = 0.0008
+Iteration 3: Benign prob = 0.0010
+Iteration 4: Benign prob = 0.0010
+Iteration 5: Benign prob = 0.0011
+Iteration 6: Benign prob = 0.0012
+Iteration 7: Benign prob = 0.0014
+Iteration 8: Benign prob = 0.0015
+Iteration 9: Benign prob = 0.0015
+Iteration 10: Benign prob = 0.0017
+Iteration 11: Benign prob = 0.0018
+Iteration 15: Benign prob = 0.0019
+Iteration 16: Benign prob = 0.0019
+Iteration 17: Benign prob = 0.0021
+Iteration 19: Benign prob = 0.0023
+Iteration 21: Benign prob = 0.0024
+Iteration 22: Benign prob = 0.0025
+Iteration 24: Benign prob = 0.0028
+Iteration 33: Benign prob = 0.0031
+Iteration 34: Benign prob = 0.0032
+Iteration 38: Benign prob = 0.0034
+Iteration 39: Benign prob = 0.0035
+Iteration 43: Benign prob = 0.0036
+Iteration 46: Benign prob = 0.0038
+Iteration 58: Benign prob = 0.0038
+Iteration 61: Benign prob = 0.0042
+Iteration 62: Benign prob = 0.0042
+Iteration 65: Benign prob = 0.0043
+Iteration 78: Benign prob = 0.0043
+Iteration 80: Benign prob = 0.0048
+Iteration 98: Benign prob = 0.0050
+Iteration 105: Benign prob = 0.0051
+Iteration 106: Benign prob = 0.0051
+Iteration 115: Benign prob = 0.0052
+Iteration 116: Benign prob = 0.0052
+Iteration 119: Benign prob = 0.0054
+Iteration 121: Benign prob = 0.0059
+Iteration 137: Benign prob = 0.0061
+Iteration 145: Benign prob = 0.0065
+Iteration 151: Benign prob = 0.0068
+Iteration 153: Benign prob = 0.0068
+Iteration 158: Benign prob = 0.0072
+Iteration 163: Benign prob = 0.0073
+Iteration 168: Benign prob = 0.0078
+Iteration 169: Benign prob = 0.0080
+Iteration 176: Benign prob = 0.0091
+Iteration 187: Benign prob = 0.0098
+Iteration 198: Benign prob = 0.0098
+Iteration 209: Benign prob = 0.0105
+Iteration 216: Benign prob = 0.0105
+Iteration 226: Benign prob = 0.0107
+Iteration 227: Benign prob = 0.0110
+Iteration 233: Benign prob = 0.0116
+Iteration 234: Benign prob = 0.0122
+Iteration 239: Benign prob = 0.0130
+Iteration 244: Benign prob = 0.0142
+Iteration 251: Benign prob = 0.0148
+Iteration 257: Benign prob = 0.0150
+Iteration 261: Benign prob = 0.0157
+Iteration 276: Benign prob = 0.0158
+Iteration 278: Benign prob = 0.0164
+Iteration 279: Benign prob = 0.0180
+Iteration 289: Benign prob = 0.0183
+Iteration 307: Benign prob = 0.0185
+Iteration 308: Benign prob = 0.0195
+Iteration 372: Benign prob = 0.0198
+Iteration 374: Benign prob = 0.0200
+Iteration 390: Benign prob = 0.0223
+Iteration 414: Benign prob = 0.0223
+Iteration 416: Benign prob = 0.0227
+Iteration 439: Benign prob = 0.0237
+Iteration 490: Benign prob = 0.0241
+Iteration 492: Benign prob = 0.0258
+Iteration 516: Benign prob = 0.0265
+Iteration 533: Benign prob = 0.0288
+Iteration 545: Benign prob = 0.0290
+Iteration 555: Benign prob = 0.0290
+Iteration 565: Benign prob = 0.0295
+Iteration 566: Benign prob = 0.0328
+Iteration 574: Benign prob = 0.0331
+Iteration 581: Benign prob = 0.0349
+Iteration 584: Benign prob = 0.0350
+Iteration 603: Benign prob = 0.0351
+Iteration 624: Benign prob = 0.0357
+Iteration 627: Benign prob = 0.0362
+Iteration 629: Benign prob = 0.0376
+Iteration 638: Benign prob = 0.0404
+Iteration 642: Benign prob = 0.0415
+Iteration 669: Benign prob = 0.0446
+Iteration 712: Benign prob = 0.0453
+Iteration 725: Benign prob = 0.0460
+Iteration 737: Benign prob = 0.0476
+Iteration 770: Benign prob = 0.0482
+Iteration 789: Benign prob = 0.0513
+Iteration 796: Benign prob = 0.0520
+Iteration 798: Benign prob = 0.0533
+Iteration 825: Benign prob = 0.0544
+Iteration 830: Benign prob = 0.0557
+Iteration 837: Benign prob = 0.0558
+Iteration 842: Benign prob = 0.0579
+Iteration 853: Benign prob = 0.0599
+Iteration 855: Benign prob = 0.0600
+Iteration 868: Benign prob = 0.0606
+Iteration 875: Benign prob = 0.0633
+Iteration 902: Benign prob = 0.0640
+Iteration 912: Benign prob = 0.0644
+Iteration 960: Benign prob = 0.0663
+Iteration 961: Benign prob = 0.0703
+Iteration 1011: Benign prob = 0.0709
+Iteration 1020: Benign prob = 0.0713
+Iteration 1048: Benign prob = 0.0715
+Iteration 1053: Benign prob = 0.0730
+Iteration 1068: Benign prob = 0.0735
+Iteration 1091: Benign prob = 0.0735
+Iteration 1148: Benign prob = 0.0749
+Iteration 1157: Benign prob = 0.0764
+Iteration 1167: Benign prob = 0.0769
+Iteration 1169: Benign prob = 0.0771
+Iteration 1171: Benign prob = 0.0788
+Iteration 1200: Benign prob = 0.0803
+Iteration 1206: Benign prob = 0.0804
+Iteration 1222: Benign prob = 0.0810
+Iteration 1241: Benign prob = 0.0843
+Iteration 1243: Benign prob = 0.0844
+Iteration 1246: Benign prob = 0.0848
+Iteration 1247: Benign prob = 0.0923
+Iteration 1268: Benign prob = 0.0941
+Iteration 1397: Benign prob = 0.0967
+Iteration 1451: Benign prob = 0.0986
+Iteration 1501: Benign prob = 0.1046
+Iteration 1507: Benign prob = 0.1046
+Iteration 1573: Benign prob = 0.1057
+Iteration 1587: Benign prob = 0.1063
+Iteration 1600: Benign prob = 0.1063
+Iteration 1604: Benign prob = 0.1067
+Iteration 1619: Benign prob = 0.1096
+Iteration 1631: Benign prob = 0.1106
+Iteration 1641: Benign prob = 0.1122
+Iteration 1646: Benign prob = 0.1130
+Iteration 1652: Benign prob = 0.1142
+Iteration 1690: Benign prob = 0.1158
+Iteration 1726: Benign prob = 0.1162
+Iteration 1743: Benign prob = 0.1169
+Iteration 1744: Benign prob = 0.1176
+Iteration 1750: Benign prob = 0.1231
+Iteration 1778: Benign prob = 0.1233
+Iteration 1845: Benign prob = 0.1257
+Iteration 1848: Benign prob = 0.1282
+Iteration 1879: Benign prob = 0.1286
+Iteration 1900: Benign prob = 0.1291
+Iteration 1974: Benign prob = 0.1302
+Iteration 2030: Benign prob = 0.1316
+Iteration 2069: Benign prob = 0.1325
+Iteration 2099: Benign prob = 0.1337
+Iteration 2159: Benign prob = 0.1362
+Iteration 2206: Benign prob = 0.1409
+Iteration 2225: Benign prob = 0.1424
+Iteration 2234: Benign prob = 0.1436
+Iteration 2260: Benign prob = 0.1445
+Iteration 2269: Benign prob = 0.1459
+Iteration 2272: Benign prob = 0.1470
+Iteration 2285: Benign prob = 0.1488
+Iteration 2300: Benign prob = 0.1511
+Iteration 2313: Benign prob = 0.1522
+Iteration 2338: Benign prob = 0.1540
+Iteration 2350: Benign prob = 0.1558
+Iteration 2371: Benign prob = 0.1605
+Iteration 2375: Benign prob = 0.1615
+Iteration 2437: Benign prob = 0.1622
+Iteration 2458: Benign prob = 0.1624
+Iteration 2469: Benign prob = 0.1631
+Iteration 2473: Benign prob = 0.1638
+Iteration 2514: Benign prob = 0.1644
+Iteration 2515: Benign prob = 0.1733
+Iteration 2641: Benign prob = 0.1740
+Iteration 2705: Benign prob = 0.1746
+Iteration 2742: Benign prob = 0.1753
+Iteration 2764: Benign prob = 0.1770
+Iteration 2780: Benign prob = 0.1793
+Iteration 2809: Benign prob = 0.1797
+Iteration 2825: Benign prob = 0.1855
+Iteration 2851: Benign prob = 0.1860
+Iteration 2867: Benign prob = 0.1872
+Iteration 2893: Benign prob = 0.1876
+Iteration 2965: Benign prob = 0.1889
+Iteration 3022: Benign prob = 0.1928
+Iteration 3026: Benign prob = 0.1931
+Iteration 3043: Benign prob = 0.1956
+Iteration 3101: Benign prob = 0.1977
+Iteration 3189: Benign prob = 0.1981
+Iteration 3209: Benign prob = 0.1988
+Iteration 3262: Benign prob = 0.2008
+Iteration 3270: Benign prob = 0.2020
+Iteration 3297: Benign prob = 0.2074
+Iteration 3478: Benign prob = 0.2091
+Iteration 3522: Benign prob = 0.2100
+Iteration 3528: Benign prob = 0.2112
+Iteration 3604: Benign prob = 0.2130
+Iteration 3614: Benign prob = 0.2185
+Iteration 3619: Benign prob = 0.2271
+Iteration 3704: Benign prob = 0.2287
+Iteration 3705: Benign prob = 0.2313
+Iteration 3795: Benign prob = 0.2373
+Iteration 3935: Benign prob = 0.2376
+Iteration 3942: Benign prob = 0.2387
+Iteration 3955: Benign prob = 0.2407
+Iteration 4062: Benign prob = 0.2426
+Iteration 4071: Benign prob = 0.2429
+Iteration 4106: Benign prob = 0.2471
+Iteration 4339: Benign prob = 0.2530
+Iteration 4360: Benign prob = 0.2560
+Iteration 4374: Benign prob = 0.2576
+Iteration 4423: Benign prob = 0.2608
+Iteration 4437: Benign prob = 0.2647
+Iteration 4440: Benign prob = 0.2707
+Iteration 4500: Benign prob = 0.2798
+Iteration 4561: Benign prob = 0.2816
+Iteration 4634: Benign prob = 0.2831
+Iteration 4635: Benign prob = 0.2846
+Iteration 4648: Benign prob = 0.2885
+Iteration 4671: Benign prob = 0.2897
+Iteration 4713: Benign prob = 0.2950
+Iteration 4742: Benign prob = 0.2960
+Iteration 4749: Benign prob = 0.2986
+Iteration 4750: Benign prob = 0.3075
+Iteration 4848: Benign prob = 0.3201
+Iteration 4892: Benign prob = 0.3202
+Iteration 4916: Benign prob = 0.3235
+Iteration 4923: Benign prob = 0.3237
+Iteration 4941: Benign prob = 0.3302
+Iteration 4954: Benign prob = 0.3307
+Iteration 5027: Benign prob = 0.3323
+Iteration 5043: Benign prob = 0.3333
+Iteration 5058: Benign prob = 0.3361
+Iteration 5098: Benign prob = 0.3397
+Iteration 5139: Benign prob = 0.3398
+Iteration 5160: Benign prob = 0.3424
+Iteration 5203: Benign prob = 0.3437
+Iteration 5387: Benign prob = 0.3467
+Iteration 5393: Benign prob = 0.3479
+Iteration 5397: Benign prob = 0.3488
+Iteration 5475: Benign prob = 0.3491
+Iteration 5504: Benign prob = 0.3554
+Iteration 5509: Benign prob = 0.3606
+Iteration 5582: Benign prob = 0.3621
+Iteration 5809: Benign prob = 0.3624
+Iteration 5881: Benign prob = 0.3677
+Iteration 5925: Benign prob = 0.3735
+Iteration 6000: Benign prob = 0.3746
+Iteration 6013: Benign prob = 0.3752
+Iteration 6053: Benign prob = 0.3792
+Iteration 6165: Benign prob = 0.3793
+Iteration 6172: Benign prob = 0.3797
+Iteration 6191: Benign prob = 0.3811
+Iteration 6352: Benign prob = 0.3812
+Iteration 6354: Benign prob = 0.3883
+Iteration 6488: Benign prob = 0.3890
+Iteration 6490: Benign prob = 0.3894
+Iteration 6606: Benign prob = 0.4026
+Iteration 6651: Benign prob = 0.4045
+Iteration 6700: Benign prob = 0.4076
+Iteration 6858: Benign prob = 0.4088
+Iteration 6864: Benign prob = 0.4112
+Iteration 6909: Benign prob = 0.4190
+Iteration 7056: Benign prob = 0.4208
+Iteration 7127: Benign prob = 0.4254
+Iteration 7137: Benign prob = 0.4260
+Iteration 7176: Benign prob = 0.4288
+Iteration 7242: Benign prob = 0.4309
+Iteration 7321: Benign prob = 0.4344
+Iteration 7406: Benign prob = 0.4388
+Iteration 7450: Benign prob = 0.4423
+Iteration 7492: Benign prob = 0.4436
+Iteration 7517: Benign prob = 0.4464
+Iteration 7674: Benign prob = 0.4470
+Iteration 7727: Benign prob = 0.4481
+Iteration 7771: Benign prob = 0.4493
+Iteration 7862: Benign prob = 0.4497
+Iteration 7901: Benign prob = 0.4565
+Iteration 7909: Benign prob = 0.4565
+Iteration 8004: Benign prob = 0.4574
+Iteration 8028: Benign prob = 0.4617
+Iteration 8118: Benign prob = 0.4661
+Iteration 8210: Benign prob = 0.4666
+Iteration 8216: Benign prob = 0.4685
+Iteration 8328: Benign prob = 0.4697
+Iteration 8378: Benign prob = 0.4712
+Iteration 8387: Benign prob = 0.4713
+Iteration 8393: Benign prob = 0.4743
+Iteration 8481: Benign prob = 0.4751
+Iteration 8525: Benign prob = 0.4755
+Iteration 8599: Benign prob = 0.4756
+Iteration 8603: Benign prob = 0.4791
+Iteration 8638: Benign prob = 0.4793
+Iteration 8664: Benign prob = 0.4795
+Iteration 8684: Benign prob = 0.4820
+Iteration 8775: Benign prob = 0.4839
+Iteration 8780: Benign prob = 0.4852
+Iteration 8920: Benign prob = 0.4920
+Iteration 9029: Benign prob = 0.4932
+Iteration 9094: Benign prob = 0.4941
+Iteration 9137: Benign prob = 0.4957
+Iteration 9185: Benign prob = 0.5000
+Iteration 9788: Benign prob = 0.5034
+Iteration 9868: Benign prob = 0.5035
+Iteration 9870: Benign prob = 0.5042
+Iteration 9879: Benign prob = 0.5067
+Iteration 9943: Benign prob = 0.5080
+Iteration 9965: Benign prob = 0.5083
+
+ Completed Adversarial Image for image 5 in 15.84 minutes.
+
+--- Adversarial Prediction Results for image 5: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/gappusinac/1AB923521BD84DA899520C942F76D6CE09F40505F5578787A4B67BA818F4E4CE.png) ---
+Predicted class: 42 (trojan)
+Confidence     : 0.6207
+True class     : 32 (rog)
+
+
+=== [6/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/gappusinac/8EA362F9D59A47872F661F085A491657E7354B835F9B9622E28BF87B9394E83B.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.3213
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 5762 with confidence 0.2971!
+
+Targeted adversarial image created in 8629 iterations.
+Benign first predicted at iteration 5762 with confidence 0.2971.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0007
+Iteration 4: Benign prob = 0.0011
+Iteration 5: Benign prob = 0.0013
+Iteration 6: Benign prob = 0.0015
+Iteration 7: Benign prob = 0.0015
+Iteration 8: Benign prob = 0.0017
+Iteration 12: Benign prob = 0.0018
+Iteration 16: Benign prob = 0.0019
+Iteration 17: Benign prob = 0.0020
+Iteration 20: Benign prob = 0.0021
+Iteration 22: Benign prob = 0.0021
+Iteration 23: Benign prob = 0.0024
+Iteration 24: Benign prob = 0.0025
+Iteration 26: Benign prob = 0.0025
+Iteration 27: Benign prob = 0.0027
+Iteration 28: Benign prob = 0.0028
+Iteration 41: Benign prob = 0.0028
+Iteration 42: Benign prob = 0.0029
+Iteration 43: Benign prob = 0.0033
+Iteration 50: Benign prob = 0.0034
+Iteration 52: Benign prob = 0.0034
+Iteration 53: Benign prob = 0.0034
+Iteration 55: Benign prob = 0.0036
+Iteration 56: Benign prob = 0.0037
+Iteration 60: Benign prob = 0.0039
+Iteration 61: Benign prob = 0.0041
+Iteration 68: Benign prob = 0.0041
+Iteration 70: Benign prob = 0.0041
+Iteration 71: Benign prob = 0.0042
+Iteration 73: Benign prob = 0.0045
+Iteration 74: Benign prob = 0.0046
+Iteration 76: Benign prob = 0.0046
+Iteration 79: Benign prob = 0.0049
+Iteration 80: Benign prob = 0.0052
+Iteration 92: Benign prob = 0.0056
+Iteration 102: Benign prob = 0.0058
+Iteration 108: Benign prob = 0.0060
+Iteration 109: Benign prob = 0.0062
+Iteration 111: Benign prob = 0.0068
+Iteration 113: Benign prob = 0.0068
+Iteration 115: Benign prob = 0.0073
+Iteration 119: Benign prob = 0.0078
+Iteration 125: Benign prob = 0.0080
+Iteration 127: Benign prob = 0.0087
+Iteration 134: Benign prob = 0.0090
+Iteration 143: Benign prob = 0.0095
+Iteration 155: Benign prob = 0.0095
+Iteration 164: Benign prob = 0.0096
+Iteration 166: Benign prob = 0.0097
+Iteration 169: Benign prob = 0.0098
+Iteration 170: Benign prob = 0.0106
+Iteration 179: Benign prob = 0.0111
+Iteration 180: Benign prob = 0.0115
+Iteration 195: Benign prob = 0.0120
+Iteration 201: Benign prob = 0.0123
+Iteration 219: Benign prob = 0.0127
+Iteration 224: Benign prob = 0.0130
+Iteration 234: Benign prob = 0.0132
+Iteration 239: Benign prob = 0.0137
+Iteration 285: Benign prob = 0.0141
+Iteration 295: Benign prob = 0.0144
+Iteration 305: Benign prob = 0.0149
+Iteration 333: Benign prob = 0.0152
+Iteration 345: Benign prob = 0.0153
+Iteration 356: Benign prob = 0.0157
+Iteration 364: Benign prob = 0.0158
+Iteration 384: Benign prob = 0.0158
+Iteration 394: Benign prob = 0.0159
+Iteration 409: Benign prob = 0.0159
+Iteration 412: Benign prob = 0.0160
+Iteration 413: Benign prob = 0.0161
+Iteration 419: Benign prob = 0.0165
+Iteration 442: Benign prob = 0.0166
+Iteration 453: Benign prob = 0.0174
+Iteration 455: Benign prob = 0.0176
+Iteration 463: Benign prob = 0.0185
+Iteration 501: Benign prob = 0.0185
+Iteration 511: Benign prob = 0.0187
+Iteration 522: Benign prob = 0.0191
+Iteration 531: Benign prob = 0.0193
+Iteration 536: Benign prob = 0.0200
+Iteration 542: Benign prob = 0.0200
+Iteration 543: Benign prob = 0.0202
+Iteration 563: Benign prob = 0.0210
+Iteration 564: Benign prob = 0.0222
+Iteration 581: Benign prob = 0.0224
+Iteration 591: Benign prob = 0.0225
+Iteration 600: Benign prob = 0.0241
+Iteration 629: Benign prob = 0.0247
+Iteration 630: Benign prob = 0.0249
+Iteration 637: Benign prob = 0.0253
+Iteration 643: Benign prob = 0.0261
+Iteration 667: Benign prob = 0.0272
+Iteration 676: Benign prob = 0.0297
+Iteration 703: Benign prob = 0.0298
+Iteration 719: Benign prob = 0.0311
+Iteration 729: Benign prob = 0.0317
+Iteration 744: Benign prob = 0.0322
+Iteration 753: Benign prob = 0.0324
+Iteration 774: Benign prob = 0.0330
+Iteration 790: Benign prob = 0.0336
+Iteration 794: Benign prob = 0.0368
+Iteration 854: Benign prob = 0.0372
+Iteration 863: Benign prob = 0.0380
+Iteration 880: Benign prob = 0.0390
+Iteration 885: Benign prob = 0.0393
+Iteration 887: Benign prob = 0.0403
+Iteration 919: Benign prob = 0.0406
+Iteration 968: Benign prob = 0.0409
+Iteration 971: Benign prob = 0.0424
+Iteration 979: Benign prob = 0.0425
+Iteration 993: Benign prob = 0.0429
+Iteration 1055: Benign prob = 0.0467
+Iteration 1114: Benign prob = 0.0489
+Iteration 1128: Benign prob = 0.0503
+Iteration 1173: Benign prob = 0.0503
+Iteration 1199: Benign prob = 0.0507
+Iteration 1207: Benign prob = 0.0510
+Iteration 1208: Benign prob = 0.0521
+Iteration 1250: Benign prob = 0.0522
+Iteration 1254: Benign prob = 0.0543
+Iteration 1274: Benign prob = 0.0563
+Iteration 1373: Benign prob = 0.0564
+Iteration 1374: Benign prob = 0.0596
+Iteration 1442: Benign prob = 0.0613
+Iteration 1465: Benign prob = 0.0622
+Iteration 1547: Benign prob = 0.0629
+Iteration 1585: Benign prob = 0.0631
+Iteration 1619: Benign prob = 0.0653
+Iteration 1628: Benign prob = 0.0655
+Iteration 1639: Benign prob = 0.0659
+Iteration 1673: Benign prob = 0.0659
+Iteration 1687: Benign prob = 0.0662
+Iteration 1714: Benign prob = 0.0670
+Iteration 1731: Benign prob = 0.0700
+Iteration 1733: Benign prob = 0.0724
+Iteration 1831: Benign prob = 0.0730
+Iteration 1851: Benign prob = 0.0737
+Iteration 1895: Benign prob = 0.0751
+Iteration 1978: Benign prob = 0.0761
+Iteration 1981: Benign prob = 0.0781
+Iteration 1984: Benign prob = 0.0812
+Iteration 1999: Benign prob = 0.0820
+Iteration 2037: Benign prob = 0.0832
+Iteration 2090: Benign prob = 0.0841
+Iteration 2092: Benign prob = 0.0842
+Iteration 2112: Benign prob = 0.0871
+Iteration 2168: Benign prob = 0.0881
+Iteration 2220: Benign prob = 0.0903
+Iteration 2281: Benign prob = 0.0911
+Iteration 2356: Benign prob = 0.0918
+Iteration 2379: Benign prob = 0.0920
+Iteration 2381: Benign prob = 0.0930
+Iteration 2404: Benign prob = 0.0939
+Iteration 2406: Benign prob = 0.0954
+Iteration 2458: Benign prob = 0.0963
+Iteration 2483: Benign prob = 0.0973
+Iteration 2492: Benign prob = 0.0979
+Iteration 2670: Benign prob = 0.1003
+Iteration 2754: Benign prob = 0.1043
+Iteration 2848: Benign prob = 0.1053
+Iteration 2870: Benign prob = 0.1057
+Iteration 2963: Benign prob = 0.1065
+Iteration 3026: Benign prob = 0.1069
+Iteration 3057: Benign prob = 0.1073
+Iteration 3082: Benign prob = 0.1079
+Iteration 3149: Benign prob = 0.1081
+Iteration 3158: Benign prob = 0.1094
+Iteration 3194: Benign prob = 0.1096
+Iteration 3219: Benign prob = 0.1130
+Iteration 3231: Benign prob = 0.1132
+Iteration 3238: Benign prob = 0.1135
+Iteration 3303: Benign prob = 0.1167
+Iteration 3365: Benign prob = 0.1185
+Iteration 3386: Benign prob = 0.1214
+Iteration 3423: Benign prob = 0.1314
+Iteration 3648: Benign prob = 0.1319
+Iteration 3672: Benign prob = 0.1351
+Iteration 3709: Benign prob = 0.1380
+Iteration 3778: Benign prob = 0.1407
+Iteration 3808: Benign prob = 0.1432
+Iteration 3846: Benign prob = 0.1438
+Iteration 3872: Benign prob = 0.1488
+Iteration 3877: Benign prob = 0.1490
+Iteration 3885: Benign prob = 0.1503
+Iteration 3916: Benign prob = 0.1514
+Iteration 3922: Benign prob = 0.1538
+Iteration 3948: Benign prob = 0.1550
+Iteration 3965: Benign prob = 0.1584
+Iteration 3997: Benign prob = 0.1596
+Iteration 4074: Benign prob = 0.1623
+Iteration 4119: Benign prob = 0.1626
+Iteration 4187: Benign prob = 0.1628
+Iteration 4211: Benign prob = 0.1631
+Iteration 4230: Benign prob = 0.1633
+Iteration 4248: Benign prob = 0.1697
+Iteration 4294: Benign prob = 0.1766
+Iteration 4317: Benign prob = 0.1767
+Iteration 4379: Benign prob = 0.1773
+Iteration 4392: Benign prob = 0.1794
+Iteration 4404: Benign prob = 0.1838
+Iteration 4444: Benign prob = 0.1856
+Iteration 4478: Benign prob = 0.1874
+Iteration 4533: Benign prob = 0.1877
+Iteration 4574: Benign prob = 0.1886
+Iteration 4576: Benign prob = 0.1959
+Iteration 4585: Benign prob = 0.1962
+Iteration 4623: Benign prob = 0.2023
+Iteration 4673: Benign prob = 0.2034
+Iteration 4682: Benign prob = 0.2042
+Iteration 4700: Benign prob = 0.2106
+Iteration 4735: Benign prob = 0.2126
+Iteration 4739: Benign prob = 0.2140
+Iteration 4750: Benign prob = 0.2173
+Iteration 4814: Benign prob = 0.2189
+Iteration 4819: Benign prob = 0.2197
+Iteration 4825: Benign prob = 0.2252
+Iteration 5016: Benign prob = 0.2267
+Iteration 5050: Benign prob = 0.2285
+Iteration 5065: Benign prob = 0.2323
+Iteration 5108: Benign prob = 0.2354
+Iteration 5113: Benign prob = 0.2415
+Iteration 5176: Benign prob = 0.2470
+Iteration 5251: Benign prob = 0.2479
+Iteration 5272: Benign prob = 0.2508
+Iteration 5287: Benign prob = 0.2532
+Iteration 5303: Benign prob = 0.2575
+Iteration 5427: Benign prob = 0.2590
+Iteration 5444: Benign prob = 0.2672
+Iteration 5456: Benign prob = 0.2690
+Iteration 5526: Benign prob = 0.2706
+Iteration 5555: Benign prob = 0.2749
+Iteration 5572: Benign prob = 0.2837
+Iteration 5734: Benign prob = 0.2860
+Iteration 5742: Benign prob = 0.2920
+Iteration 5760: Benign prob = 0.2944
+Iteration 5762: Benign prob = 0.2971
+Iteration 5904: Benign prob = 0.2979
+Iteration 5935: Benign prob = 0.3006
+Iteration 5955: Benign prob = 0.3131
+Iteration 5986: Benign prob = 0.3178
+Iteration 6010: Benign prob = 0.3185
+Iteration 6044: Benign prob = 0.3222
+Iteration 6066: Benign prob = 0.3231
+Iteration 6082: Benign prob = 0.3288
+Iteration 6107: Benign prob = 0.3352
+Iteration 6177: Benign prob = 0.3370
+Iteration 6198: Benign prob = 0.3475
+Iteration 6205: Benign prob = 0.3496
+Iteration 6207: Benign prob = 0.3616
+Iteration 6212: Benign prob = 0.3631
+Iteration 6273: Benign prob = 0.3657
+Iteration 6357: Benign prob = 0.3719
+Iteration 6371: Benign prob = 0.3743
+Iteration 6404: Benign prob = 0.3873
+Iteration 6407: Benign prob = 0.3889
+Iteration 6456: Benign prob = 0.3907
+Iteration 6475: Benign prob = 0.4022
+Iteration 6503: Benign prob = 0.4046
+Iteration 6585: Benign prob = 0.4055
+Iteration 6595: Benign prob = 0.4064
+Iteration 6636: Benign prob = 0.4102
+Iteration 6645: Benign prob = 0.4120
+Iteration 6704: Benign prob = 0.4162
+Iteration 6792: Benign prob = 0.4177
+Iteration 6798: Benign prob = 0.4186
+Iteration 6866: Benign prob = 0.4216
+Iteration 6909: Benign prob = 0.4248
+Iteration 6913: Benign prob = 0.4310
+Iteration 6965: Benign prob = 0.4323
+Iteration 7019: Benign prob = 0.4371
+Iteration 7041: Benign prob = 0.4372
+Iteration 7045: Benign prob = 0.4416
+Iteration 7076: Benign prob = 0.4429
+Iteration 7095: Benign prob = 0.4433
+Iteration 7097: Benign prob = 0.4453
+Iteration 7107: Benign prob = 0.4499
+Iteration 7109: Benign prob = 0.4513
+Iteration 7139: Benign prob = 0.4616
+Iteration 7195: Benign prob = 0.4640
+Iteration 7229: Benign prob = 0.4718
+Iteration 7413: Benign prob = 0.4745
+Iteration 7486: Benign prob = 0.4754
+Iteration 7657: Benign prob = 0.4923
+Iteration 7737: Benign prob = 0.4944
+Iteration 7762: Benign prob = 0.4956
+Iteration 7781: Benign prob = 0.4970
+Iteration 8015: Benign prob = 0.4972
+Iteration 8027: Benign prob = 0.5011
+Iteration 8058: Benign prob = 0.5020
+Iteration 8082: Benign prob = 0.5064
+Iteration 8133: Benign prob = 0.5122
+Iteration 8145: Benign prob = 0.5161
+Iteration 8151: Benign prob = 0.5170
+Iteration 8159: Benign prob = 0.5182
+Iteration 8169: Benign prob = 0.5200
+Iteration 8195: Benign prob = 0.5293
+Iteration 8255: Benign prob = 0.5304
+Iteration 8297: Benign prob = 0.5311
+Iteration 8299: Benign prob = 0.5332
+Iteration 8335: Benign prob = 0.5357
+Iteration 8391: Benign prob = 0.5385
+Iteration 8426: Benign prob = 0.5416
+Iteration 8434: Benign prob = 0.5432
+Iteration 8449: Benign prob = 0.5455
+Iteration 8526: Benign prob = 0.5490
+Iteration 8629: Benign prob = 0.5543
+
+ Completed Adversarial Image for image 6 in 13.51 minutes.
+
+--- Adversarial Prediction Results for image 6: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/gappusinac/8EA362F9D59A47872F661F085A491657E7354B835F9B9622E28BF87B9394E83B.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5543
+True class     : 32 (rog)
+
+
+=== [7/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/evilcert/3CF44A420137DE071C569189443DC6E616E05089F9648591EA0C329DCBCD520A.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.2890
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 538 with confidence 0.3580!
+
+Targeted adversarial image created in 880 iterations.
+Benign first predicted at iteration 538 with confidence 0.3580.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0058
+Iteration 77: Benign prob = 0.0060
+Iteration 78: Benign prob = 0.0076
+Iteration 84: Benign prob = 0.0089
+Iteration 87: Benign prob = 0.0094
+Iteration 91: Benign prob = 0.0096
+Iteration 93: Benign prob = 0.0138
+Iteration 97: Benign prob = 0.0140
+Iteration 99: Benign prob = 0.0155
+Iteration 100: Benign prob = 0.0163
+Iteration 103: Benign prob = 0.0265
+Iteration 110: Benign prob = 0.0313
+Iteration 116: Benign prob = 0.0334
+Iteration 117: Benign prob = 0.0347
+Iteration 120: Benign prob = 0.0351
+Iteration 121: Benign prob = 0.0384
+Iteration 127: Benign prob = 0.0468
+Iteration 135: Benign prob = 0.0481
+Iteration 144: Benign prob = 0.0535
+Iteration 152: Benign prob = 0.0561
+Iteration 154: Benign prob = 0.0572
+Iteration 157: Benign prob = 0.0617
+Iteration 162: Benign prob = 0.0619
+Iteration 164: Benign prob = 0.0675
+Iteration 179: Benign prob = 0.0714
+Iteration 188: Benign prob = 0.0732
+Iteration 189: Benign prob = 0.0733
+Iteration 190: Benign prob = 0.0771
+Iteration 193: Benign prob = 0.0779
+Iteration 200: Benign prob = 0.0869
+Iteration 205: Benign prob = 0.1001
+Iteration 232: Benign prob = 0.1011
+Iteration 237: Benign prob = 0.1016
+Iteration 238: Benign prob = 0.1148
+Iteration 253: Benign prob = 0.1163
+Iteration 270: Benign prob = 0.1181
+Iteration 273: Benign prob = 0.1211
+Iteration 278: Benign prob = 0.1225
+Iteration 285: Benign prob = 0.1291
+Iteration 287: Benign prob = 0.1417
+Iteration 298: Benign prob = 0.1422
+Iteration 303: Benign prob = 0.1524
+Iteration 304: Benign prob = 0.1545
+Iteration 321: Benign prob = 0.1551
+Iteration 322: Benign prob = 0.1693
+Iteration 324: Benign prob = 0.1699
+Iteration 325: Benign prob = 0.1704
+Iteration 334: Benign prob = 0.1785
+Iteration 341: Benign prob = 0.1867
+Iteration 344: Benign prob = 0.1895
+Iteration 349: Benign prob = 0.2147
+Iteration 352: Benign prob = 0.2197
+Iteration 361: Benign prob = 0.2208
+Iteration 363: Benign prob = 0.2306
+Iteration 376: Benign prob = 0.2337
+Iteration 399: Benign prob = 0.2439
+Iteration 405: Benign prob = 0.2473
+Iteration 436: Benign prob = 0.2657
+Iteration 467: Benign prob = 0.2777
+Iteration 471: Benign prob = 0.2809
+Iteration 472: Benign prob = 0.2911
+Iteration 476: Benign prob = 0.2913
+Iteration 485: Benign prob = 0.3058
+Iteration 508: Benign prob = 0.3103
+Iteration 513: Benign prob = 0.3277
+Iteration 525: Benign prob = 0.3395
+Iteration 531: Benign prob = 0.3521
+Iteration 538: Benign prob = 0.3580
+Iteration 548: Benign prob = 0.3633
+Iteration 552: Benign prob = 0.3663
+Iteration 553: Benign prob = 0.3733
+Iteration 560: Benign prob = 0.3799
+Iteration 561: Benign prob = 0.3909
+Iteration 562: Benign prob = 0.4010
+Iteration 578: Benign prob = 0.4065
+Iteration 583: Benign prob = 0.4078
+Iteration 600: Benign prob = 0.4104
+Iteration 632: Benign prob = 0.4474
+Iteration 649: Benign prob = 0.4617
+Iteration 662: Benign prob = 0.4703
+Iteration 670: Benign prob = 0.4716
+Iteration 687: Benign prob = 0.4852
+Iteration 698: Benign prob = 0.4937
+Iteration 705: Benign prob = 0.4963
+Iteration 722: Benign prob = 0.5006
+Iteration 725: Benign prob = 0.5065
+Iteration 750: Benign prob = 0.5078
+Iteration 777: Benign prob = 0.5109
+Iteration 797: Benign prob = 0.5143
+Iteration 799: Benign prob = 0.5168
+Iteration 812: Benign prob = 0.5198
+Iteration 822: Benign prob = 0.5292
+Iteration 838: Benign prob = 0.5305
+Iteration 852: Benign prob = 0.5323
+Iteration 869: Benign prob = 0.5433
+Iteration 880: Benign prob = 0.5566
+
+ Completed Adversarial Image for image 7 in 1.38 minutes.
+
+--- Adversarial Prediction Results for image 7: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/evilcert/3CF44A420137DE071C569189443DC6E616E05089F9648591EA0C329DCBCD520A.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5565
+True class     : 32 (rog)
+
+
+=== [8/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/evilcert/90A87DAAC6CF85F8BE38E86F66758AC4218B519E4FAADEABC0B8150CE7C446B8.png ===
+
+--- Original Prediction Results ---
+Predicted class: 4 (adware)
+
+Confidence     : 1.0000
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 2474 with confidence 0.2882!
+
+Targeted adversarial image created in 3346 iterations.
+Benign first predicted at iteration 2474 with confidence 0.2882.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0007
+Iteration 3: Benign prob = 0.0016
+Iteration 6: Benign prob = 0.0017
+Iteration 8: Benign prob = 0.0019
+Iteration 9: Benign prob = 0.0020
+Iteration 11: Benign prob = 0.0020
+Iteration 14: Benign prob = 0.0020
+Iteration 15: Benign prob = 0.0020
+Iteration 19: Benign prob = 0.0021
+Iteration 21: Benign prob = 0.0022
+Iteration 22: Benign prob = 0.0022
+Iteration 23: Benign prob = 0.0023
+Iteration 24: Benign prob = 0.0024
+Iteration 30: Benign prob = 0.0025
+Iteration 35: Benign prob = 0.0026
+Iteration 36: Benign prob = 0.0029
+Iteration 42: Benign prob = 0.0031
+Iteration 43: Benign prob = 0.0031
+Iteration 57: Benign prob = 0.0032
+Iteration 72: Benign prob = 0.0033
+Iteration 78: Benign prob = 0.0033
+Iteration 84: Benign prob = 0.0036
+Iteration 97: Benign prob = 0.0038
+Iteration 103: Benign prob = 0.0039
+Iteration 105: Benign prob = 0.0039
+Iteration 106: Benign prob = 0.0039
+Iteration 115: Benign prob = 0.0039
+Iteration 121: Benign prob = 0.0041
+Iteration 149: Benign prob = 0.0042
+Iteration 182: Benign prob = 0.0043
+Iteration 190: Benign prob = 0.0046
+Iteration 198: Benign prob = 0.0047
+Iteration 208: Benign prob = 0.0047
+Iteration 211: Benign prob = 0.0053
+Iteration 217: Benign prob = 0.0054
+Iteration 223: Benign prob = 0.0056
+Iteration 227: Benign prob = 0.0056
+Iteration 262: Benign prob = 0.0057
+Iteration 272: Benign prob = 0.0060
+Iteration 289: Benign prob = 0.0060
+Iteration 300: Benign prob = 0.0060
+Iteration 311: Benign prob = 0.0063
+Iteration 320: Benign prob = 0.0067
+Iteration 322: Benign prob = 0.0069
+Iteration 331: Benign prob = 0.0070
+Iteration 343: Benign prob = 0.0071
+Iteration 365: Benign prob = 0.0083
+Iteration 391: Benign prob = 0.0085
+Iteration 404: Benign prob = 0.0086
+Iteration 405: Benign prob = 0.0098
+Iteration 440: Benign prob = 0.0098
+Iteration 442: Benign prob = 0.0109
+Iteration 450: Benign prob = 0.0116
+Iteration 466: Benign prob = 0.0117
+Iteration 467: Benign prob = 0.0120
+Iteration 470: Benign prob = 0.0122
+Iteration 482: Benign prob = 0.0127
+Iteration 492: Benign prob = 0.0140
+Iteration 524: Benign prob = 0.0143
+Iteration 542: Benign prob = 0.0167
+Iteration 596: Benign prob = 0.0173
+Iteration 613: Benign prob = 0.0177
+Iteration 619: Benign prob = 0.0199
+Iteration 620: Benign prob = 0.0199
+Iteration 630: Benign prob = 0.0203
+Iteration 641: Benign prob = 0.0204
+Iteration 658: Benign prob = 0.0206
+Iteration 676: Benign prob = 0.0211
+Iteration 687: Benign prob = 0.0220
+Iteration 700: Benign prob = 0.0222
+Iteration 703: Benign prob = 0.0223
+Iteration 718: Benign prob = 0.0224
+Iteration 730: Benign prob = 0.0231
+Iteration 734: Benign prob = 0.0231
+Iteration 744: Benign prob = 0.0233
+Iteration 747: Benign prob = 0.0241
+Iteration 753: Benign prob = 0.0245
+Iteration 754: Benign prob = 0.0246
+Iteration 782: Benign prob = 0.0250
+Iteration 795: Benign prob = 0.0252
+Iteration 801: Benign prob = 0.0257
+Iteration 830: Benign prob = 0.0261
+Iteration 860: Benign prob = 0.0265
+Iteration 866: Benign prob = 0.0274
+Iteration 883: Benign prob = 0.0282
+Iteration 884: Benign prob = 0.0290
+Iteration 892: Benign prob = 0.0295
+Iteration 911: Benign prob = 0.0302
+Iteration 976: Benign prob = 0.0304
+Iteration 997: Benign prob = 0.0323
+Iteration 1061: Benign prob = 0.0328
+Iteration 1089: Benign prob = 0.0328
+Iteration 1111: Benign prob = 0.0344
+Iteration 1128: Benign prob = 0.0345
+Iteration 1129: Benign prob = 0.0368
+Iteration 1146: Benign prob = 0.0403
+Iteration 1211: Benign prob = 0.0404
+Iteration 1219: Benign prob = 0.0405
+Iteration 1228: Benign prob = 0.0412
+Iteration 1233: Benign prob = 0.0418
+Iteration 1243: Benign prob = 0.0422
+Iteration 1258: Benign prob = 0.0426
+Iteration 1268: Benign prob = 0.0426
+Iteration 1274: Benign prob = 0.0448
+Iteration 1303: Benign prob = 0.0452
+Iteration 1326: Benign prob = 0.0456
+Iteration 1341: Benign prob = 0.0478
+Iteration 1368: Benign prob = 0.0480
+Iteration 1380: Benign prob = 0.0514
+Iteration 1397: Benign prob = 0.0520
+Iteration 1440: Benign prob = 0.0524
+Iteration 1445: Benign prob = 0.0558
+Iteration 1514: Benign prob = 0.0562
+Iteration 1539: Benign prob = 0.0567
+Iteration 1551: Benign prob = 0.0579
+Iteration 1555: Benign prob = 0.0589
+Iteration 1585: Benign prob = 0.0673
+Iteration 1602: Benign prob = 0.0713
+Iteration 1611: Benign prob = 0.0718
+Iteration 1621: Benign prob = 0.0731
+Iteration 1623: Benign prob = 0.0784
+Iteration 1631: Benign prob = 0.0790
+Iteration 1632: Benign prob = 0.0801
+Iteration 1647: Benign prob = 0.0809
+Iteration 1649: Benign prob = 0.0869
+Iteration 1665: Benign prob = 0.0963
+Iteration 1699: Benign prob = 0.0974
+Iteration 1705: Benign prob = 0.0985
+Iteration 1717: Benign prob = 0.1000
+Iteration 1718: Benign prob = 0.1051
+Iteration 1730: Benign prob = 0.1087
+Iteration 1776: Benign prob = 0.1117
+Iteration 1782: Benign prob = 0.1250
+Iteration 1789: Benign prob = 0.1252
+Iteration 1820: Benign prob = 0.1298
+Iteration 1862: Benign prob = 0.1312
+Iteration 1896: Benign prob = 0.1329
+Iteration 1906: Benign prob = 0.1459
+Iteration 1936: Benign prob = 0.1522
+Iteration 1952: Benign prob = 0.1522
+Iteration 1978: Benign prob = 0.1529
+Iteration 1993: Benign prob = 0.1562
+Iteration 1994: Benign prob = 0.1573
+Iteration 2016: Benign prob = 0.1697
+Iteration 2048: Benign prob = 0.1747
+Iteration 2068: Benign prob = 0.1821
+Iteration 2074: Benign prob = 0.1824
+Iteration 2082: Benign prob = 0.1902
+Iteration 2085: Benign prob = 0.1940
+Iteration 2122: Benign prob = 0.2025
+Iteration 2135: Benign prob = 0.2053
+Iteration 2146: Benign prob = 0.2069
+Iteration 2154: Benign prob = 0.2074
+Iteration 2182: Benign prob = 0.2080
+Iteration 2193: Benign prob = 0.2108
+Iteration 2208: Benign prob = 0.2149
+Iteration 2221: Benign prob = 0.2162
+Iteration 2228: Benign prob = 0.2248
+Iteration 2245: Benign prob = 0.2267
+Iteration 2273: Benign prob = 0.2297
+Iteration 2279: Benign prob = 0.2356
+Iteration 2321: Benign prob = 0.2398
+Iteration 2327: Benign prob = 0.2424
+Iteration 2399: Benign prob = 0.2485
+Iteration 2402: Benign prob = 0.2491
+Iteration 2450: Benign prob = 0.2519
+Iteration 2464: Benign prob = 0.2785
+Iteration 2466: Benign prob = 0.2790
+Iteration 2474: Benign prob = 0.2882
+Iteration 2497: Benign prob = 0.2944
+Iteration 2502: Benign prob = 0.3004
+Iteration 2507: Benign prob = 0.3026
+Iteration 2524: Benign prob = 0.3154
+Iteration 2543: Benign prob = 0.3282
+Iteration 2545: Benign prob = 0.3317
+Iteration 2553: Benign prob = 0.3352
+Iteration 2586: Benign prob = 0.3379
+Iteration 2601: Benign prob = 0.3488
+Iteration 2609: Benign prob = 0.3489
+Iteration 2622: Benign prob = 0.3509
+Iteration 2636: Benign prob = 0.3542
+Iteration 2679: Benign prob = 0.3595
+Iteration 2690: Benign prob = 0.3619
+Iteration 2696: Benign prob = 0.3624
+Iteration 2701: Benign prob = 0.3654
+Iteration 2708: Benign prob = 0.3707
+Iteration 2725: Benign prob = 0.3838
+Iteration 2737: Benign prob = 0.3883
+Iteration 2739: Benign prob = 0.3906
+Iteration 2751: Benign prob = 0.3935
+Iteration 2793: Benign prob = 0.4149
+Iteration 2818: Benign prob = 0.4163
+Iteration 2829: Benign prob = 0.4212
+Iteration 2842: Benign prob = 0.4243
+Iteration 2859: Benign prob = 0.4341
+Iteration 2864: Benign prob = 0.4364
+Iteration 2879: Benign prob = 0.4444
+Iteration 2946: Benign prob = 0.4493
+Iteration 2947: Benign prob = 0.4532
+Iteration 2958: Benign prob = 0.4640
+Iteration 3000: Benign prob = 0.4899
+Iteration 3003: Benign prob = 0.4983
+Iteration 3046: Benign prob = 0.4999
+Iteration 3054: Benign prob = 0.5001
+Iteration 3062: Benign prob = 0.5025
+Iteration 3069: Benign prob = 0.5108
+Iteration 3109: Benign prob = 0.5110
+Iteration 3120: Benign prob = 0.5115
+Iteration 3145: Benign prob = 0.5145
+Iteration 3159: Benign prob = 0.5332
+Iteration 3193: Benign prob = 0.5344
+Iteration 3265: Benign prob = 0.5410
+Iteration 3322: Benign prob = 0.5466
+Iteration 3346: Benign prob = 0.5536
+
+ Completed Adversarial Image for image 8 in 5.23 minutes.
+
+--- Adversarial Prediction Results for image 8: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/evilcert/90A87DAAC6CF85F8BE38E86F66758AC4218B519E4FAADEABC0B8150CE7C446B8.png) ---
+Predicted class: 11 (benign)
+Confidence     : 0.5536
+True class     : 32 (rog)
+
+
+=== [9/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/droidad/16D9A08FFA6F7F316D98D16C86270370412112F02590A88D2430496135CFC46B.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.3701
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+Failed to generate adversarial image in 10000 iterations.
+
+[ERROR] Error to generate adversarial image for 9 (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/droidad/16D9A08FFA6F7F316D98D16C86270370412112F02590A88D2430496135CFC46B.png): unsupported format string passed to NoneType.__format__
+
+
+=== [10/10] Creating EA Adversarial Image for /home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/droidad/BB4B330554EA7E4EAC23CD33B318EE15877BF8CD636B62E755A56D736C37AD97.png ===
+
+--- Original Prediction Results ---
+Predicted class: 42 (trojan)
+
+Confidence     : 0.4621
+
+True class     : 32 (rog)
+
+Target ('benign') class: 11 (benign)
+
+[INFO] Benign class became best class at iteration 7735 with confidence 0.2869!
+
+Failed to generate adversarial image in 10000 iterations.
+Benign first predicted at iteration 7735 with confidence 0.2869.
+
+Benign probability changes (iteration, prob):
+Iteration 0: Benign prob = 0.0006
+Iteration 2: Benign prob = 0.0007
+Iteration 3: Benign prob = 0.0013
+Iteration 4: Benign prob = 0.0014
+Iteration 5: Benign prob = 0.0016
+Iteration 7: Benign prob = 0.0016
+Iteration 8: Benign prob = 0.0016
+Iteration 9: Benign prob = 0.0018
+Iteration 10: Benign prob = 0.0018
+Iteration 11: Benign prob = 0.0019
+Iteration 12: Benign prob = 0.0020
+Iteration 13: Benign prob = 0.0023
+Iteration 15: Benign prob = 0.0024
+Iteration 17: Benign prob = 0.0025
+Iteration 20: Benign prob = 0.0026
+Iteration 24: Benign prob = 0.0028
+Iteration 27: Benign prob = 0.0029
+Iteration 31: Benign prob = 0.0031
+Iteration 34: Benign prob = 0.0034
+Iteration 35: Benign prob = 0.0035
+Iteration 38: Benign prob = 0.0040
+Iteration 39: Benign prob = 0.0041
+Iteration 42: Benign prob = 0.0042
+Iteration 43: Benign prob = 0.0050
+Iteration 46: Benign prob = 0.0051
+Iteration 47: Benign prob = 0.0059
+Iteration 59: Benign prob = 0.0061
+Iteration 70: Benign prob = 0.0073
+Iteration 88: Benign prob = 0.0076
+Iteration 95: Benign prob = 0.0076
+Iteration 96: Benign prob = 0.0077
+Iteration 97: Benign prob = 0.0079
+Iteration 98: Benign prob = 0.0087
+Iteration 102: Benign prob = 0.0092
+Iteration 103: Benign prob = 0.0097
+Iteration 114: Benign prob = 0.0098
+Iteration 115: Benign prob = 0.0101
+Iteration 124: Benign prob = 0.0106
+Iteration 125: Benign prob = 0.0108
+Iteration 133: Benign prob = 0.0110
+Iteration 135: Benign prob = 0.0112
+Iteration 137: Benign prob = 0.0115
+Iteration 143: Benign prob = 0.0120
+Iteration 164: Benign prob = 0.0128
+Iteration 187: Benign prob = 0.0133
+Iteration 202: Benign prob = 0.0135
+Iteration 204: Benign prob = 0.0135
+Iteration 205: Benign prob = 0.0142
+Iteration 210: Benign prob = 0.0147
+Iteration 211: Benign prob = 0.0151
+Iteration 232: Benign prob = 0.0157
+Iteration 253: Benign prob = 0.0159
+Iteration 272: Benign prob = 0.0163
+Iteration 283: Benign prob = 0.0165
+Iteration 290: Benign prob = 0.0167
+Iteration 296: Benign prob = 0.0172
+Iteration 326: Benign prob = 0.0175
+Iteration 346: Benign prob = 0.0177
+Iteration 348: Benign prob = 0.0180
+Iteration 372: Benign prob = 0.0181
+Iteration 375: Benign prob = 0.0181
+Iteration 413: Benign prob = 0.0182
+Iteration 414: Benign prob = 0.0190
+Iteration 443: Benign prob = 0.0192
+Iteration 459: Benign prob = 0.0193
+Iteration 478: Benign prob = 0.0203
+Iteration 508: Benign prob = 0.0212
+Iteration 510: Benign prob = 0.0214
+Iteration 511: Benign prob = 0.0215
+Iteration 537: Benign prob = 0.0218
+Iteration 545: Benign prob = 0.0225
+Iteration 555: Benign prob = 0.0226
+Iteration 574: Benign prob = 0.0237
+Iteration 592: Benign prob = 0.0243
+Iteration 625: Benign prob = 0.0244
+Iteration 626: Benign prob = 0.0246
+Iteration 627: Benign prob = 0.0257
+Iteration 667: Benign prob = 0.0258
+Iteration 671: Benign prob = 0.0268
+Iteration 679: Benign prob = 0.0272
+Iteration 682: Benign prob = 0.0301
+Iteration 692: Benign prob = 0.0311
+Iteration 715: Benign prob = 0.0315
+Iteration 721: Benign prob = 0.0324
+Iteration 746: Benign prob = 0.0341
+Iteration 776: Benign prob = 0.0344
+Iteration 785: Benign prob = 0.0347
+Iteration 799: Benign prob = 0.0369
+Iteration 876: Benign prob = 0.0394
+Iteration 894: Benign prob = 0.0397
+Iteration 936: Benign prob = 0.0409
+Iteration 970: Benign prob = 0.0409
+Iteration 997: Benign prob = 0.0414
+Iteration 1010: Benign prob = 0.0417
+Iteration 1015: Benign prob = 0.0427
+Iteration 1063: Benign prob = 0.0428
+Iteration 1111: Benign prob = 0.0429
+Iteration 1115: Benign prob = 0.0444
+Iteration 1140: Benign prob = 0.0446
+Iteration 1147: Benign prob = 0.0447
+Iteration 1150: Benign prob = 0.0451
+Iteration 1184: Benign prob = 0.0460
+Iteration 1193: Benign prob = 0.0466
+Iteration 1209: Benign prob = 0.0469
+Iteration 1210: Benign prob = 0.0472
+Iteration 1231: Benign prob = 0.0477
+Iteration 1237: Benign prob = 0.0478
+Iteration 1252: Benign prob = 0.0500
+Iteration 1289: Benign prob = 0.0504
+Iteration 1350: Benign prob = 0.0507
+Iteration 1396: Benign prob = 0.0525
+Iteration 1486: Benign prob = 0.0526
+Iteration 1512: Benign prob = 0.0527
+Iteration 1516: Benign prob = 0.0531
+Iteration 1528: Benign prob = 0.0539
+Iteration 1536: Benign prob = 0.0548
+Iteration 1559: Benign prob = 0.0561
+Iteration 1593: Benign prob = 0.0568
+Iteration 1611: Benign prob = 0.0575
+Iteration 1633: Benign prob = 0.0579
+Iteration 1638: Benign prob = 0.0593
+Iteration 1694: Benign prob = 0.0598
+Iteration 1702: Benign prob = 0.0617
+Iteration 1710: Benign prob = 0.0634
+Iteration 1782: Benign prob = 0.0653
+Iteration 1785: Benign prob = 0.0662
+Iteration 1822: Benign prob = 0.0665
+Iteration 1835: Benign prob = 0.0666
+Iteration 1849: Benign prob = 0.0669
+Iteration 1862: Benign prob = 0.0670
+Iteration 1876: Benign prob = 0.0675
+Iteration 1878: Benign prob = 0.0677
+Iteration 1907: Benign prob = 0.0687
+Iteration 1936: Benign prob = 0.0699
+Iteration 1943: Benign prob = 0.0728
+Iteration 2078: Benign prob = 0.0735
+Iteration 2088: Benign prob = 0.0738
+Iteration 2094: Benign prob = 0.0743
+Iteration 2097: Benign prob = 0.0748
+Iteration 2125: Benign prob = 0.0749
+Iteration 2126: Benign prob = 0.0753
+Iteration 2246: Benign prob = 0.0754
+Iteration 2251: Benign prob = 0.0769
+Iteration 2311: Benign prob = 0.0781
+Iteration 2410: Benign prob = 0.0781
+Iteration 2413: Benign prob = 0.0823
+Iteration 2437: Benign prob = 0.0835
+Iteration 2513: Benign prob = 0.0843
+Iteration 2530: Benign prob = 0.0862
+Iteration 2580: Benign prob = 0.0867
+Iteration 2586: Benign prob = 0.0885
+Iteration 2625: Benign prob = 0.0886
+Iteration 2626: Benign prob = 0.0887
+Iteration 2638: Benign prob = 0.0909
+Iteration 2668: Benign prob = 0.0910
+Iteration 2677: Benign prob = 0.0911
+Iteration 2679: Benign prob = 0.0949
+Iteration 2823: Benign prob = 0.0972
+Iteration 2854: Benign prob = 0.1035
+Iteration 2864: Benign prob = 0.1046
+Iteration 2882: Benign prob = 0.1076
+Iteration 2917: Benign prob = 0.1083
+Iteration 2989: Benign prob = 0.1088
+Iteration 3043: Benign prob = 0.1092
+Iteration 3053: Benign prob = 0.1101
+Iteration 3107: Benign prob = 0.1105
+Iteration 3160: Benign prob = 0.1111
+Iteration 3173: Benign prob = 0.1123
+Iteration 3231: Benign prob = 0.1149
+Iteration 3354: Benign prob = 0.1151
+Iteration 3372: Benign prob = 0.1157
+Iteration 3423: Benign prob = 0.1186
+Iteration 3429: Benign prob = 0.1202
+Iteration 3493: Benign prob = 0.1205
+Iteration 3517: Benign prob = 0.1212
+Iteration 3552: Benign prob = 0.1255
+Iteration 3680: Benign prob = 0.1282
+Iteration 3739: Benign prob = 0.1286
+Iteration 3790: Benign prob = 0.1301
+Iteration 3835: Benign prob = 0.1350
+Iteration 3873: Benign prob = 0.1355
+Iteration 3894: Benign prob = 0.1383
+Iteration 3956: Benign prob = 0.1388
+Iteration 3960: Benign prob = 0.1438
+Iteration 3987: Benign prob = 0.1442
+Iteration 4044: Benign prob = 0.1452
+Iteration 4067: Benign prob = 0.1464
+Iteration 4104: Benign prob = 0.1545
+Iteration 4181: Benign prob = 0.1555
+Iteration 4230: Benign prob = 0.1591
+Iteration 4300: Benign prob = 0.1603
+Iteration 4332: Benign prob = 0.1648
+Iteration 4353: Benign prob = 0.1654
+Iteration 4357: Benign prob = 0.1667
+Iteration 4363: Benign prob = 0.1673
+Iteration 4373: Benign prob = 0.1675
+Iteration 4389: Benign prob = 0.1686
+Iteration 4420: Benign prob = 0.1701
+Iteration 4442: Benign prob = 0.1707
+Iteration 4495: Benign prob = 0.1748
+Iteration 4596: Benign prob = 0.1757
+Iteration 4635: Benign prob = 0.1770
+Iteration 4721: Benign prob = 0.1795
+Iteration 4847: Benign prob = 0.1840
+Iteration 4881: Benign prob = 0.1887
+Iteration 5058: Benign prob = 0.1900
+Iteration 5136: Benign prob = 0.1928
+Iteration 5202: Benign prob = 0.1935
+Iteration 5219: Benign prob = 0.1936
+Iteration 5239: Benign prob = 0.1937
+Iteration 5251: Benign prob = 0.1969
+Iteration 5400: Benign prob = 0.1972
+Iteration 5468: Benign prob = 0.1997
+Iteration 5546: Benign prob = 0.1998
+Iteration 5587: Benign prob = 0.2001
+Iteration 5593: Benign prob = 0.2002
+Iteration 5597: Benign prob = 0.2042
+Iteration 5601: Benign prob = 0.2048
+Iteration 5666: Benign prob = 0.2065
+Iteration 5712: Benign prob = 0.2072
+Iteration 5756: Benign prob = 0.2080
+Iteration 5786: Benign prob = 0.2115
+Iteration 5800: Benign prob = 0.2155
+Iteration 5871: Benign prob = 0.2170
+Iteration 5913: Benign prob = 0.2178
+Iteration 6001: Benign prob = 0.2179
+Iteration 6035: Benign prob = 0.2180
+Iteration 6109: Benign prob = 0.2194
+Iteration 6156: Benign prob = 0.2209
+Iteration 6193: Benign prob = 0.2243
+Iteration 6202: Benign prob = 0.2263
+Iteration 6251: Benign prob = 0.2329
+Iteration 6296: Benign prob = 0.2335
+Iteration 6385: Benign prob = 0.2346
+Iteration 6475: Benign prob = 0.2356
+Iteration 6540: Benign prob = 0.2360
+Iteration 6547: Benign prob = 0.2368
+Iteration 6576: Benign prob = 0.2372
+Iteration 6621: Benign prob = 0.2385
+Iteration 6692: Benign prob = 0.2397
+Iteration 6756: Benign prob = 0.2449
+Iteration 6799: Benign prob = 0.2452
+Iteration 7007: Benign prob = 0.2473
+Iteration 7108: Benign prob = 0.2521
+Iteration 7137: Benign prob = 0.2556
+Iteration 7189: Benign prob = 0.2570
+Iteration 7210: Benign prob = 0.2595
+Iteration 7300: Benign prob = 0.2650
+Iteration 7463: Benign prob = 0.2671
+Iteration 7464: Benign prob = 0.2689
+Iteration 7553: Benign prob = 0.2702
+Iteration 7561: Benign prob = 0.2713
+Iteration 7572: Benign prob = 0.2729
+Iteration 7581: Benign prob = 0.2736
+Iteration 7596: Benign prob = 0.2772
+Iteration 7636: Benign prob = 0.2834
+Iteration 7735: Benign prob = 0.2869
+Iteration 7780: Benign prob = 0.2886
+Iteration 7837: Benign prob = 0.2933
+Iteration 7842: Benign prob = 0.2969
+Iteration 7936: Benign prob = 0.3000
+Iteration 7950: Benign prob = 0.3021
+Iteration 7952: Benign prob = 0.3033
+Iteration 7956: Benign prob = 0.3049
+Iteration 7978: Benign prob = 0.3129
+Iteration 8031: Benign prob = 0.3141
+Iteration 8033: Benign prob = 0.3147
+Iteration 8085: Benign prob = 0.3222
+Iteration 8133: Benign prob = 0.3224
+Iteration 8135: Benign prob = 0.3322
+Iteration 8248: Benign prob = 0.3406
+Iteration 8279: Benign prob = 0.3451
+Iteration 8340: Benign prob = 0.3482
+Iteration 8342: Benign prob = 0.3486
+Iteration 8379: Benign prob = 0.3500
+Iteration 8474: Benign prob = 0.3530
+Iteration 8526: Benign prob = 0.3598
+Iteration 8527: Benign prob = 0.3644
+Iteration 8629: Benign prob = 0.3724
+Iteration 8880: Benign prob = 0.3728
+Iteration 8905: Benign prob = 0.3746
+Iteration 8917: Benign prob = 0.3770
+Iteration 8952: Benign prob = 0.3781
+Iteration 8984: Benign prob = 0.3790
+Iteration 9001: Benign prob = 0.3889
+Iteration 9006: Benign prob = 0.3899
+Iteration 9138: Benign prob = 0.3972
+Iteration 9209: Benign prob = 0.4002
+Iteration 9214: Benign prob = 0.4019
+Iteration 9245: Benign prob = 0.4020
+Iteration 9278: Benign prob = 0.4022
+Iteration 9283: Benign prob = 0.4041
+Iteration 9286: Benign prob = 0.4048
+Iteration 9291: Benign prob = 0.4049
+Iteration 9307: Benign prob = 0.4059
+Iteration 9316: Benign prob = 0.4131
+Iteration 9329: Benign prob = 0.4136
+Iteration 9345: Benign prob = 0.4139
+Iteration 9436: Benign prob = 0.4157
+Iteration 9455: Benign prob = 0.4252
+Iteration 9649: Benign prob = 0.4305
+Iteration 9747: Benign prob = 0.4314
+Iteration 9822: Benign prob = 0.4346
+Iteration 9847: Benign prob = 0.4359
+Iteration 9857: Benign prob = 0.4366
+Iteration 9883: Benign prob = 0.4368
+
+ Completed Adversarial Image for image 10 in 15.65 minutes.
+
+--- Adversarial Prediction Results for image 10: (/home/users/atodorova/alisa-thesis/malnet-cnn/test/rog/droidad/BB4B330554EA7E4EAC23CD33B318EE15877BF8CD636B62E755A56D736C37AD97.png) ---
+Predicted class: 42 (trojan)
+Confidence     : 0.4621
+True class     : 32 (rog)
