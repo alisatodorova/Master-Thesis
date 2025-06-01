@@ -1,0 +1,785 @@
+Using DataParallel on GPUs: [0, 1]
+GPU 0: NVIDIA GeForce RTX 4060 Ti with 8187.5 MB memory
+GPU 1: NVIDIA GeForce RTX 4060 Ti with 8187.38 MB memory
+Using device: cuda
+DATASET SUMMARY
+Number of classes        : 47
+Class labels             : ['addisplay', 'addisplay++adware', 'adload', 'adsware', 'adware', 'adware++adware', 'adware++grayware++virus', 'adware++virus', 'adwareare', 'backdoor', 'banker++trojan', 'benign', 'click', 'clicker', 'clicker++trojan', 'clickfraud++riskware', 'downloader', 'dropper++trojan', 'exploit', 'fakeangry', 'fakeapp', 'fakeapp++trojan', 'fakeinst++trojan', 'gray', 'hacktool', 'malware', 'malware++trj', 'monitor', 'ransom++trojan', 'risktool++riskware++virus', 'riskware', 'riskware++smssend', 'rog', 'rootnik++trojan', 'smssend', 'smssend++trojan', 'spr', 'spy', 'spy++trojan', 'spyware', 'trj', 'troj', 'trojan', 'trojandownloader', 'trojandropper', 'virus', 'worm']
+Train samples            : 883416
+Validation samples       : 126202
+Test samples             : 252406
+Train class distribution : {0: 12221, 1: 206, 2: 233, 3: 1856, 4: 619118, 5: 1752, 6: 585, 7: 192, 8: 106, 9: 421, 10: 774, 11: 55383, 12: 79, 13: 186, 14: 2007, 15: 258, 16: 3498, 17: 414, 18: 3907, 19: 148, 20: 298, 21: 179, 22: 503, 23: 645, 24: 379, 25: 1754, 26: 426, 27: 950, 28: 807, 29: 106, 30: 22236, 31: 173, 32: 1382, 33: 156, 34: 2286, 35: 3006, 36: 9675, 37: 1152, 38: 83, 39: 4613, 40: 658, 41: 2316, 42: 125478, 43: 398, 44: 125, 45: 134, 46: 154}
+--------------------------------------------------
+Using 2 GPUs.
+MODEL SUMMARY
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 128, 128]           9,408
+            Conv2d-2         [-1, 64, 128, 128]           9,408
+       BatchNorm2d-3         [-1, 64, 128, 128]             128
+       BatchNorm2d-4         [-1, 64, 128, 128]             128
+              ReLU-5         [-1, 64, 128, 128]               0
+              ReLU-6         [-1, 64, 128, 128]               0
+         MaxPool2d-7           [-1, 64, 64, 64]               0
+         MaxPool2d-8           [-1, 64, 64, 64]               0
+            Conv2d-9           [-1, 64, 64, 64]           4,096
+           Conv2d-10           [-1, 64, 64, 64]           4,096
+      BatchNorm2d-11           [-1, 64, 64, 64]             128
+             ReLU-12           [-1, 64, 64, 64]               0
+      BatchNorm2d-13           [-1, 64, 64, 64]             128
+             ReLU-14           [-1, 64, 64, 64]               0
+           Conv2d-15           [-1, 64, 64, 64]          36,864
+           Conv2d-16           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-17           [-1, 64, 64, 64]             128
+             ReLU-18           [-1, 64, 64, 64]               0
+      BatchNorm2d-19           [-1, 64, 64, 64]             128
+             ReLU-20           [-1, 64, 64, 64]               0
+           Conv2d-21          [-1, 256, 64, 64]          16,384
+           Conv2d-22          [-1, 256, 64, 64]          16,384
+      BatchNorm2d-23          [-1, 256, 64, 64]             512
+      BatchNorm2d-24          [-1, 256, 64, 64]             512
+           Conv2d-25          [-1, 256, 64, 64]          16,384
+           Conv2d-26          [-1, 256, 64, 64]          16,384
+      BatchNorm2d-27          [-1, 256, 64, 64]             512
+      BatchNorm2d-28          [-1, 256, 64, 64]             512
+             ReLU-29          [-1, 256, 64, 64]               0
+       Bottleneck-30          [-1, 256, 64, 64]               0
+             ReLU-31          [-1, 256, 64, 64]               0
+       Bottleneck-32          [-1, 256, 64, 64]               0
+           Conv2d-33           [-1, 64, 64, 64]          16,384
+           Conv2d-34           [-1, 64, 64, 64]          16,384
+      BatchNorm2d-35           [-1, 64, 64, 64]             128
+             ReLU-36           [-1, 64, 64, 64]               0
+      BatchNorm2d-37           [-1, 64, 64, 64]             128
+           Conv2d-38           [-1, 64, 64, 64]          36,864
+             ReLU-39           [-1, 64, 64, 64]               0
+           Conv2d-40           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-41           [-1, 64, 64, 64]             128
+             ReLU-42           [-1, 64, 64, 64]               0
+           Conv2d-43          [-1, 256, 64, 64]          16,384
+      BatchNorm2d-44           [-1, 64, 64, 64]             128
+             ReLU-45           [-1, 64, 64, 64]               0
+      BatchNorm2d-46          [-1, 256, 64, 64]             512
+           Conv2d-47          [-1, 256, 64, 64]          16,384
+             ReLU-48          [-1, 256, 64, 64]               0
+       Bottleneck-49          [-1, 256, 64, 64]               0
+      BatchNorm2d-50          [-1, 256, 64, 64]             512
+           Conv2d-51           [-1, 64, 64, 64]          16,384
+             ReLU-52          [-1, 256, 64, 64]               0
+       Bottleneck-53          [-1, 256, 64, 64]               0
+      BatchNorm2d-54           [-1, 64, 64, 64]             128
+           Conv2d-55           [-1, 64, 64, 64]          16,384
+             ReLU-56           [-1, 64, 64, 64]               0
+           Conv2d-57           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-58           [-1, 64, 64, 64]             128
+      BatchNorm2d-59           [-1, 64, 64, 64]             128
+             ReLU-60           [-1, 64, 64, 64]               0
+             ReLU-61           [-1, 64, 64, 64]               0
+           Conv2d-62           [-1, 64, 64, 64]          36,864
+           Conv2d-63          [-1, 256, 64, 64]          16,384
+      BatchNorm2d-64           [-1, 64, 64, 64]             128
+      BatchNorm2d-65          [-1, 256, 64, 64]             512
+             ReLU-66           [-1, 64, 64, 64]               0
+           Conv2d-67          [-1, 256, 64, 64]          16,384
+             ReLU-68          [-1, 256, 64, 64]               0
+       Bottleneck-69          [-1, 256, 64, 64]               0
+      BatchNorm2d-70          [-1, 256, 64, 64]             512
+             ReLU-71          [-1, 256, 64, 64]               0
+       Bottleneck-72          [-1, 256, 64, 64]               0
+           Conv2d-73          [-1, 128, 64, 64]          32,768
+           Conv2d-74          [-1, 128, 64, 64]          32,768
+      BatchNorm2d-75          [-1, 128, 64, 64]             256
+      BatchNorm2d-76          [-1, 128, 64, 64]             256
+             ReLU-77          [-1, 128, 64, 64]               0
+             ReLU-78          [-1, 128, 64, 64]               0
+           Conv2d-79          [-1, 128, 32, 32]         147,456
+           Conv2d-80          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-81          [-1, 128, 32, 32]             256
+      BatchNorm2d-82          [-1, 128, 32, 32]             256
+             ReLU-83          [-1, 128, 32, 32]               0
+             ReLU-84          [-1, 128, 32, 32]               0
+           Conv2d-85          [-1, 512, 32, 32]          65,536
+           Conv2d-86          [-1, 512, 32, 32]          65,536
+      BatchNorm2d-87          [-1, 512, 32, 32]           1,024
+      BatchNorm2d-88          [-1, 512, 32, 32]           1,024
+           Conv2d-89          [-1, 512, 32, 32]         131,072
+           Conv2d-90          [-1, 512, 32, 32]         131,072
+      BatchNorm2d-91          [-1, 512, 32, 32]           1,024
+      BatchNorm2d-92          [-1, 512, 32, 32]           1,024
+             ReLU-93          [-1, 512, 32, 32]               0
+       Bottleneck-94          [-1, 512, 32, 32]               0
+             ReLU-95          [-1, 512, 32, 32]               0
+       Bottleneck-96          [-1, 512, 32, 32]               0
+           Conv2d-97          [-1, 128, 32, 32]          65,536
+      BatchNorm2d-98          [-1, 128, 32, 32]             256
+             ReLU-99          [-1, 128, 32, 32]               0
+          Conv2d-100          [-1, 128, 32, 32]          65,536
+     BatchNorm2d-101          [-1, 128, 32, 32]             256
+          Conv2d-102          [-1, 128, 32, 32]         147,456
+            ReLU-103          [-1, 128, 32, 32]               0
+     BatchNorm2d-104          [-1, 128, 32, 32]             256
+            ReLU-105          [-1, 128, 32, 32]               0
+          Conv2d-106          [-1, 512, 32, 32]          65,536
+     BatchNorm2d-107          [-1, 512, 32, 32]           1,024
+            ReLU-108          [-1, 512, 32, 32]               0
+      Bottleneck-109          [-1, 512, 32, 32]               0
+          Conv2d-110          [-1, 128, 32, 32]          65,536
+     BatchNorm2d-111          [-1, 128, 32, 32]             256
+            ReLU-112          [-1, 128, 32, 32]               0
+          Conv2d-113          [-1, 128, 32, 32]         147,456
+     BatchNorm2d-114          [-1, 128, 32, 32]             256
+            ReLU-115          [-1, 128, 32, 32]               0
+          Conv2d-116          [-1, 512, 32, 32]          65,536
+     BatchNorm2d-117          [-1, 512, 32, 32]           1,024
+          Conv2d-118          [-1, 128, 32, 32]         147,456
+            ReLU-119          [-1, 512, 32, 32]               0
+      Bottleneck-120          [-1, 512, 32, 32]               0
+          Conv2d-121          [-1, 128, 32, 32]          65,536
+     BatchNorm2d-122          [-1, 128, 32, 32]             256
+     BatchNorm2d-123          [-1, 128, 32, 32]             256
+            ReLU-124          [-1, 128, 32, 32]               0
+            ReLU-125          [-1, 128, 32, 32]               0
+          Conv2d-126          [-1, 512, 32, 32]          65,536
+          Conv2d-127          [-1, 128, 32, 32]         147,456
+     BatchNorm2d-128          [-1, 512, 32, 32]           1,024
+     BatchNorm2d-129          [-1, 128, 32, 32]             256
+            ReLU-130          [-1, 128, 32, 32]               0
+            ReLU-131          [-1, 512, 32, 32]               0
+      Bottleneck-132          [-1, 512, 32, 32]               0
+          Conv2d-133          [-1, 512, 32, 32]          65,536
+          Conv2d-134          [-1, 128, 32, 32]          65,536
+     BatchNorm2d-135          [-1, 512, 32, 32]           1,024
+     BatchNorm2d-136          [-1, 128, 32, 32]             256
+            ReLU-137          [-1, 512, 32, 32]               0
+      Bottleneck-138          [-1, 512, 32, 32]               0
+            ReLU-139          [-1, 128, 32, 32]               0
+          Conv2d-140          [-1, 128, 32, 32]         147,456
+     BatchNorm2d-141          [-1, 128, 32, 32]             256
+            ReLU-142          [-1, 128, 32, 32]               0
+          Conv2d-143          [-1, 512, 32, 32]          65,536
+     BatchNorm2d-144          [-1, 512, 32, 32]           1,024
+            ReLU-145          [-1, 512, 32, 32]               0
+      Bottleneck-146          [-1, 512, 32, 32]               0
+          Conv2d-147          [-1, 256, 32, 32]         131,072
+          Conv2d-148          [-1, 128, 32, 32]          65,536
+     BatchNorm2d-149          [-1, 256, 32, 32]             512
+     BatchNorm2d-150          [-1, 128, 32, 32]             256
+            ReLU-151          [-1, 256, 32, 32]               0
+            ReLU-152          [-1, 128, 32, 32]               0
+          Conv2d-153          [-1, 128, 32, 32]         147,456
+     BatchNorm2d-154          [-1, 128, 32, 32]             256
+            ReLU-155          [-1, 128, 32, 32]               0
+          Conv2d-156          [-1, 512, 32, 32]          65,536
+     BatchNorm2d-157          [-1, 512, 32, 32]           1,024
+            ReLU-158          [-1, 512, 32, 32]               0
+      Bottleneck-159          [-1, 512, 32, 32]               0
+          Conv2d-160          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-161          [-1, 256, 16, 16]             512
+            ReLU-162          [-1, 256, 16, 16]               0
+          Conv2d-163          [-1, 256, 32, 32]         131,072
+     BatchNorm2d-164          [-1, 256, 32, 32]             512
+          Conv2d-165         [-1, 1024, 16, 16]         262,144
+            ReLU-166          [-1, 256, 32, 32]               0
+     BatchNorm2d-167         [-1, 1024, 16, 16]           2,048
+          Conv2d-168         [-1, 1024, 16, 16]         524,288
+     BatchNorm2d-169         [-1, 1024, 16, 16]           2,048
+            ReLU-170         [-1, 1024, 16, 16]               0
+      Bottleneck-171         [-1, 1024, 16, 16]               0
+          Conv2d-172          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-173          [-1, 256, 16, 16]             512
+            ReLU-174          [-1, 256, 16, 16]               0
+          Conv2d-175         [-1, 1024, 16, 16]         262,144
+     BatchNorm2d-176         [-1, 1024, 16, 16]           2,048
+          Conv2d-177         [-1, 1024, 16, 16]         524,288
+     BatchNorm2d-178         [-1, 1024, 16, 16]           2,048
+            ReLU-179         [-1, 1024, 16, 16]               0
+      Bottleneck-180         [-1, 1024, 16, 16]               0
+          Conv2d-181          [-1, 256, 16, 16]         262,144
+          Conv2d-182          [-1, 256, 16, 16]         262,144
+     BatchNorm2d-183          [-1, 256, 16, 16]             512
+     BatchNorm2d-184          [-1, 256, 16, 16]             512
+            ReLU-185          [-1, 256, 16, 16]               0
+            ReLU-186          [-1, 256, 16, 16]               0
+          Conv2d-187          [-1, 256, 16, 16]         589,824
+          Conv2d-188          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-189          [-1, 256, 16, 16]             512
+     BatchNorm2d-190          [-1, 256, 16, 16]             512
+            ReLU-191          [-1, 256, 16, 16]               0
+            ReLU-192          [-1, 256, 16, 16]               0
+          Conv2d-193         [-1, 1024, 16, 16]         262,144
+          Conv2d-194         [-1, 1024, 16, 16]         262,144
+     BatchNorm2d-195         [-1, 1024, 16, 16]           2,048
+     BatchNorm2d-196         [-1, 1024, 16, 16]           2,048
+            ReLU-197         [-1, 1024, 16, 16]               0
+      Bottleneck-198         [-1, 1024, 16, 16]               0
+          Conv2d-199          [-1, 256, 16, 16]         262,144
+            ReLU-200         [-1, 1024, 16, 16]               0
+      Bottleneck-201         [-1, 1024, 16, 16]               0
+          Conv2d-202          [-1, 256, 16, 16]         262,144
+     BatchNorm2d-203          [-1, 256, 16, 16]             512
+            ReLU-204          [-1, 256, 16, 16]               0
+     BatchNorm2d-205          [-1, 256, 16, 16]             512
+          Conv2d-206          [-1, 256, 16, 16]         589,824
+            ReLU-207          [-1, 256, 16, 16]               0
+          Conv2d-208          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-209          [-1, 256, 16, 16]             512
+     BatchNorm2d-210          [-1, 256, 16, 16]             512
+            ReLU-211          [-1, 256, 16, 16]               0
+          Conv2d-212         [-1, 1024, 16, 16]         262,144
+            ReLU-213          [-1, 256, 16, 16]               0
+          Conv2d-214         [-1, 1024, 16, 16]         262,144
+     BatchNorm2d-215         [-1, 1024, 16, 16]           2,048
+     BatchNorm2d-216         [-1, 1024, 16, 16]           2,048
+            ReLU-217         [-1, 1024, 16, 16]               0
+      Bottleneck-218         [-1, 1024, 16, 16]               0
+            ReLU-219         [-1, 1024, 16, 16]               0
+      Bottleneck-220         [-1, 1024, 16, 16]               0
+          Conv2d-221          [-1, 256, 16, 16]         262,144
+          Conv2d-222          [-1, 256, 16, 16]         262,144
+     BatchNorm2d-223          [-1, 256, 16, 16]             512
+            ReLU-224          [-1, 256, 16, 16]               0
+     BatchNorm2d-225          [-1, 256, 16, 16]             512
+          Conv2d-226          [-1, 256, 16, 16]         589,824
+            ReLU-227          [-1, 256, 16, 16]               0
+     BatchNorm2d-228          [-1, 256, 16, 16]             512
+          Conv2d-229          [-1, 256, 16, 16]         589,824
+            ReLU-230          [-1, 256, 16, 16]               0
+     BatchNorm2d-231          [-1, 256, 16, 16]             512
+          Conv2d-232         [-1, 1024, 16, 16]         262,144
+            ReLU-233          [-1, 256, 16, 16]               0
+     BatchNorm2d-234         [-1, 1024, 16, 16]           2,048
+          Conv2d-235         [-1, 1024, 16, 16]         262,144
+            ReLU-236         [-1, 1024, 16, 16]               0
+      Bottleneck-237         [-1, 1024, 16, 16]               0
+     BatchNorm2d-238         [-1, 1024, 16, 16]           2,048
+          Conv2d-239          [-1, 256, 16, 16]         262,144
+            ReLU-240         [-1, 1024, 16, 16]               0
+      Bottleneck-241         [-1, 1024, 16, 16]               0
+     BatchNorm2d-242          [-1, 256, 16, 16]             512
+          Conv2d-243          [-1, 256, 16, 16]         262,144
+            ReLU-244          [-1, 256, 16, 16]               0
+          Conv2d-245          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-246          [-1, 256, 16, 16]             512
+     BatchNorm2d-247          [-1, 256, 16, 16]             512
+            ReLU-248          [-1, 256, 16, 16]               0
+            ReLU-249          [-1, 256, 16, 16]               0
+          Conv2d-250          [-1, 256, 16, 16]         589,824
+          Conv2d-251         [-1, 1024, 16, 16]         262,144
+     BatchNorm2d-252          [-1, 256, 16, 16]             512
+     BatchNorm2d-253         [-1, 1024, 16, 16]           2,048
+            ReLU-254          [-1, 256, 16, 16]               0
+          Conv2d-255         [-1, 1024, 16, 16]         262,144
+            ReLU-256         [-1, 1024, 16, 16]               0
+      Bottleneck-257         [-1, 1024, 16, 16]               0
+          Conv2d-258          [-1, 256, 16, 16]         262,144
+     BatchNorm2d-259         [-1, 1024, 16, 16]           2,048
+     BatchNorm2d-260          [-1, 256, 16, 16]             512
+            ReLU-261         [-1, 1024, 16, 16]               0
+      Bottleneck-262         [-1, 1024, 16, 16]               0
+            ReLU-263          [-1, 256, 16, 16]               0
+          Conv2d-264          [-1, 256, 16, 16]         262,144
+          Conv2d-265          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-266          [-1, 256, 16, 16]             512
+     BatchNorm2d-267          [-1, 256, 16, 16]             512
+            ReLU-268          [-1, 256, 16, 16]               0
+            ReLU-269          [-1, 256, 16, 16]               0
+          Conv2d-270         [-1, 1024, 16, 16]         262,144
+     BatchNorm2d-271         [-1, 1024, 16, 16]           2,048
+            ReLU-272         [-1, 1024, 16, 16]               0
+      Bottleneck-273         [-1, 1024, 16, 16]               0
+          Conv2d-274          [-1, 256, 16, 16]         589,824
+     BatchNorm2d-275          [-1, 256, 16, 16]             512
+            ReLU-276          [-1, 256, 16, 16]               0
+          Conv2d-277         [-1, 1024, 16, 16]         262,144
+          Conv2d-278          [-1, 512, 16, 16]         524,288
+     BatchNorm2d-279          [-1, 512, 16, 16]           1,024
+     BatchNorm2d-280         [-1, 1024, 16, 16]           2,048
+            ReLU-281          [-1, 512, 16, 16]               0
+            ReLU-282         [-1, 1024, 16, 16]               0
+      Bottleneck-283         [-1, 1024, 16, 16]               0
+          Conv2d-284            [-1, 512, 8, 8]       2,359,296
+          Conv2d-285          [-1, 512, 16, 16]         524,288
+     BatchNorm2d-286            [-1, 512, 8, 8]           1,024
+            ReLU-287            [-1, 512, 8, 8]               0
+     BatchNorm2d-288          [-1, 512, 16, 16]           1,024
+            ReLU-289          [-1, 512, 16, 16]               0
+          Conv2d-290           [-1, 2048, 8, 8]       1,048,576
+     BatchNorm2d-291           [-1, 2048, 8, 8]           4,096
+          Conv2d-292            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-293            [-1, 512, 8, 8]           1,024
+            ReLU-294            [-1, 512, 8, 8]               0
+          Conv2d-295           [-1, 2048, 8, 8]       2,097,152
+     BatchNorm2d-296           [-1, 2048, 8, 8]           4,096
+            ReLU-297           [-1, 2048, 8, 8]               0
+      Bottleneck-298           [-1, 2048, 8, 8]               0
+          Conv2d-299           [-1, 2048, 8, 8]       1,048,576
+          Conv2d-300            [-1, 512, 8, 8]       1,048,576
+     BatchNorm2d-301           [-1, 2048, 8, 8]           4,096
+     BatchNorm2d-302            [-1, 512, 8, 8]           1,024
+            ReLU-303            [-1, 512, 8, 8]               0
+          Conv2d-304           [-1, 2048, 8, 8]       2,097,152
+     BatchNorm2d-305           [-1, 2048, 8, 8]           4,096
+          Conv2d-306            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-307            [-1, 512, 8, 8]           1,024
+            ReLU-308           [-1, 2048, 8, 8]               0
+      Bottleneck-309           [-1, 2048, 8, 8]               0
+            ReLU-310            [-1, 512, 8, 8]               0
+          Conv2d-311           [-1, 2048, 8, 8]       1,048,576
+     BatchNorm2d-312           [-1, 2048, 8, 8]           4,096
+            ReLU-313           [-1, 2048, 8, 8]               0
+      Bottleneck-314           [-1, 2048, 8, 8]               0
+          Conv2d-315            [-1, 512, 8, 8]       1,048,576
+     BatchNorm2d-316            [-1, 512, 8, 8]           1,024
+            ReLU-317            [-1, 512, 8, 8]               0
+          Conv2d-318            [-1, 512, 8, 8]       2,359,296
+          Conv2d-319            [-1, 512, 8, 8]       1,048,576
+     BatchNorm2d-320            [-1, 512, 8, 8]           1,024
+            ReLU-321            [-1, 512, 8, 8]               0
+     BatchNorm2d-322            [-1, 512, 8, 8]           1,024
+          Conv2d-323           [-1, 2048, 8, 8]       1,048,576
+            ReLU-324            [-1, 512, 8, 8]               0
+     BatchNorm2d-325           [-1, 2048, 8, 8]           4,096
+            ReLU-326           [-1, 2048, 8, 8]               0
+      Bottleneck-327           [-1, 2048, 8, 8]               0
+          Conv2d-328            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-329            [-1, 512, 8, 8]           1,024
+            ReLU-330            [-1, 512, 8, 8]               0
+          Conv2d-331           [-1, 2048, 8, 8]       1,048,576
+     BatchNorm2d-332           [-1, 2048, 8, 8]           4,096
+            ReLU-333           [-1, 2048, 8, 8]               0
+      Bottleneck-334           [-1, 2048, 8, 8]               0
+          Conv2d-335            [-1, 512, 8, 8]       1,048,576
+     BatchNorm2d-336            [-1, 512, 8, 8]           1,024
+            ReLU-337            [-1, 512, 8, 8]               0
+          Conv2d-338            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-339            [-1, 512, 8, 8]           1,024
+            ReLU-340            [-1, 512, 8, 8]               0
+          Conv2d-341           [-1, 2048, 8, 8]       1,048,576
+     BatchNorm2d-342           [-1, 2048, 8, 8]           4,096
+            ReLU-343           [-1, 2048, 8, 8]               0
+      Bottleneck-344           [-1, 2048, 8, 8]               0
+AdaptiveAvgPool2d-345           [-1, 2048, 1, 1]               0
+AdaptiveAvgPool2d-346           [-1, 2048, 1, 1]               0
+          Linear-347                   [-1, 47]          96,303
+          ResNet-348                   [-1, 47]               0
+          Linear-349                   [-1, 47]          96,303
+          ResNet-350                   [-1, 47]               0
+================================================================
+Total params: 47,208,670
+Trainable params: 192,606
+Non-trainable params: 47,016,064
+----------------------------------------------------------------
+Input size (MB): 0.75
+Forward/backward pass size (MB): 748.53
+Params size (MB): 180.09
+Estimated Total Size (MB): 929.37
+----------------------------------------------------------------
+Loaded epoch 1
+
+Epoch 002 | Time: 4285.6s | Loss: 7459.1956
+Train Acc: 0.7315 | Train Balanced Acc: 0.0902
+Val Acc: 0.7337 | Val Balanced Acc: 0.1110
+
+Epoch 003 | Time: 4238.5s | Loss: 7312.9399
+Train Acc: 0.7340 | Train Balanced Acc: 0.1099
+Val Acc: 0.7362 | Val Balanced Acc: 0.1368
+
+Epoch 004 | Time: 4220.4s | Loss: 7215.2594
+Train Acc: 0.7356 | Train Balanced Acc: 0.1224
+Val Acc: 0.7372 | Val Balanced Acc: 0.1401
+
+Epoch 005 | Time: 4221.5s | Loss: 7150.0653
+Train Acc: 0.7364 | Train Balanced Acc: 0.1320
+Val Acc: 0.7393 | Val Balanced Acc: 0.1492
+
+Epoch 006 | Time: 4215.8s | Loss: 7094.1533
+Train Acc: 0.7374 | Train Balanced Acc: 0.1344
+Val Acc: 0.7386 | Val Balanced Acc: 0.1506
+
+Epoch 007 | Time: 4219.0s | Loss: 7047.8655
+Train Acc: 0.7383 | Train Balanced Acc: 0.1412
+Val Acc: 0.7394 | Val Balanced Acc: 0.1550
+
+Epoch 008 | Time: 4229.4s | Loss: 7012.9263
+Train Acc: 0.7387 | Train Balanced Acc: 0.1458
+Val Acc: 0.7405 | Val Balanced Acc: 0.1603
+
+Epoch 009 | Time: 4220.9s | Loss: 6990.6261
+Train Acc: 0.7392 | Train Balanced Acc: 0.1509
+Val Acc: 0.7415 | Val Balanced Acc: 0.1626
+
+Epoch 010 | Time: 4237.0s | Loss: 6960.3181
+Train Acc: 0.7396 | Train Balanced Acc: 0.1550
+Val Acc: 0.7410 | Val Balanced Acc: 0.1617
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_010.pt
+
+Epoch 011 | Time: 4264.2s | Loss: 6935.7701
+Train Acc: 0.7401 | Train Balanced Acc: 0.1606
+Val Acc: 0.7418 | Val Balanced Acc: 0.1768
+
+Epoch 012 | Time: 4237.1s | Loss: 6918.8521
+Train Acc: 0.7401 | Train Balanced Acc: 0.1623
+Val Acc: 0.7412 | Val Balanced Acc: 0.1661
+
+Epoch 013 | Time: 4250.5s | Loss: 6896.4572
+Train Acc: 0.7407 | Train Balanced Acc: 0.1625
+Val Acc: 0.7426 | Val Balanced Acc: 0.1912
+
+Epoch 014 | Time: 4253.7s | Loss: 6882.7881
+Train Acc: 0.7411 | Train Balanced Acc: 0.1677
+Val Acc: 0.7430 | Val Balanced Acc: 0.1889
+
+Epoch 015 | Time: 4248.5s | Loss: 6865.0384
+Train Acc: 0.7411 | Train Balanced Acc: 0.1723
+Val Acc: 0.7419 | Val Balanced Acc: 0.1996
+
+Epoch 016 | Time: 4261.2s | Loss: 6850.3177
+Train Acc: 0.7413 | Train Balanced Acc: 0.1733
+Val Acc: 0.7419 | Val Balanced Acc: 0.1973
+
+Epoch 017 | Time: 4263.1s | Loss: 6836.3345
+Train Acc: 0.7416 | Train Balanced Acc: 0.1724
+Val Acc: 0.7438 | Val Balanced Acc: 0.1839
+
+Epoch 018 | Time: 4253.0s | Loss: 6824.7466
+Train Acc: 0.7421 | Train Balanced Acc: 0.1774
+Val Acc: 0.7432 | Val Balanced Acc: 0.1980
+
+Epoch 019 | Time: 4259.9s | Loss: 6808.6902
+Train Acc: 0.7423 | Train Balanced Acc: 0.1773
+Val Acc: 0.7435 | Val Balanced Acc: 0.2057
+
+Epoch 020 | Time: 4269.0s | Loss: 6806.7885
+Train Acc: 0.7422 | Train Balanced Acc: 0.1801
+Val Acc: 0.7436 | Val Balanced Acc: 0.2056
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_020.pt
+
+Epoch 021 | Time: 4266.3s | Loss: 6789.0130
+Train Acc: 0.7424 | Train Balanced Acc: 0.1823
+Val Acc: 0.7438 | Val Balanced Acc: 0.2200
+
+Epoch 022 | Time: 4279.0s | Loss: 6787.1588
+Train Acc: 0.7428 | Train Balanced Acc: 0.1804
+Val Acc: 0.7441 | Val Balanced Acc: 0.1864
+
+Epoch 023 | Time: 4272.7s | Loss: 6777.4162
+Train Acc: 0.7427 | Train Balanced Acc: 0.1821
+Val Acc: 0.7442 | Val Balanced Acc: 0.2068
+
+Epoch 024 | Time: 4271.9s | Loss: 6767.7376
+Train Acc: 0.7430 | Train Balanced Acc: 0.1868
+Val Acc: 0.7438 | Val Balanced Acc: 0.1935
+
+Epoch 025 | Time: 4268.6s | Loss: 6756.5493
+Train Acc: 0.7433 | Train Balanced Acc: 0.1845
+Val Acc: 0.7450 | Val Balanced Acc: 0.2127
+
+Epoch 026 | Time: 4261.1s | Loss: 6745.9366
+Train Acc: 0.7432 | Train Balanced Acc: 0.1908
+Val Acc: 0.7454 | Val Balanced Acc: 0.2097
+
+Epoch 027 | Time: 4264.6s | Loss: 6738.2836
+Train Acc: 0.7434 | Train Balanced Acc: 0.1882
+Val Acc: 0.7447 | Val Balanced Acc: 0.2163
+
+Epoch 028 | Time: 4263.7s | Loss: 6735.5670
+Train Acc: 0.7434 | Train Balanced Acc: 0.1944
+Val Acc: 0.7443 | Val Balanced Acc: 0.2103
+
+Epoch 029 | Time: 4321.0s | Loss: 6729.0644
+Train Acc: 0.7435 | Train Balanced Acc: 0.1919
+Val Acc: 0.7454 | Val Balanced Acc: 0.2060
+
+Epoch 030 | Time: 4281.3s | Loss: 6716.3945
+Train Acc: 0.7439 | Train Balanced Acc: 0.1910
+Val Acc: 0.7453 | Val Balanced Acc: 0.2189
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_030.pt
+
+Epoch 031 | Time: 4263.8s | Loss: 6710.1167
+Train Acc: 0.7439 | Train Balanced Acc: 0.1951
+Val Acc: 0.7443 | Val Balanced Acc: 0.2118
+
+Epoch 032 | Time: 4282.3s | Loss: 6712.8011
+Train Acc: 0.7438 | Train Balanced Acc: 0.1950
+Val Acc: 0.7449 | Val Balanced Acc: 0.2262
+
+Epoch 033 | Time: 4280.8s | Loss: 6696.8083
+Train Acc: 0.7440 | Train Balanced Acc: 0.1985
+Val Acc: 0.7452 | Val Balanced Acc: 0.2127
+
+Epoch 034 | Time: 4291.2s | Loss: 6706.0736
+Train Acc: 0.7440 | Train Balanced Acc: 0.1962
+Val Acc: 0.7458 | Val Balanced Acc: 0.2192
+
+Epoch 035 | Time: 4285.1s | Loss: 6690.9318
+Train Acc: 0.7441 | Train Balanced Acc: 0.1982
+Val Acc: 0.7446 | Val Balanced Acc: 0.2325
+
+Epoch 036 | Time: 4276.5s | Loss: 6688.4606
+Train Acc: 0.7442 | Train Balanced Acc: 0.1960
+Val Acc: 0.7463 | Val Balanced Acc: 0.2237
+
+Epoch 037 | Time: 4283.9s | Loss: 6680.1131
+Train Acc: 0.7443 | Train Balanced Acc: 0.2021
+Val Acc: 0.7447 | Val Balanced Acc: 0.2074
+
+Epoch 038 | Time: 4284.9s | Loss: 6677.0553
+Train Acc: 0.7443 | Train Balanced Acc: 0.2023
+Val Acc: 0.7462 | Val Balanced Acc: 0.2231
+
+Epoch 039 | Time: 4281.4s | Loss: 6674.0550
+Train Acc: 0.7445 | Train Balanced Acc: 0.1992
+Val Acc: 0.7469 | Val Balanced Acc: 0.2129
+
+Epoch 040 | Time: 4292.4s | Loss: 6666.1652
+Train Acc: 0.7446 | Train Balanced Acc: 0.2022
+Val Acc: 0.7461 | Val Balanced Acc: 0.2326
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_040.pt
+
+Epoch 041 | Time: 4288.8s | Loss: 6668.8036
+Train Acc: 0.7444 | Train Balanced Acc: 0.1980
+Val Acc: 0.7461 | Val Balanced Acc: 0.2284
+
+Epoch 042 | Time: 4283.4s | Loss: 6657.0777
+Train Acc: 0.7448 | Train Balanced Acc: 0.2038
+Val Acc: 0.7464 | Val Balanced Acc: 0.2152
+
+Epoch 043 | Time: 4279.4s | Loss: 6652.3513
+Train Acc: 0.7444 | Train Balanced Acc: 0.2049
+Val Acc: 0.7464 | Val Balanced Acc: 0.2267
+
+Epoch 044 | Time: 4283.5s | Loss: 6649.4270
+Train Acc: 0.7447 | Train Balanced Acc: 0.2041
+Val Acc: 0.7451 | Val Balanced Acc: 0.2288
+
+Epoch 045 | Time: 4274.5s | Loss: 6645.5991
+Train Acc: 0.7448 | Train Balanced Acc: 0.2060
+Val Acc: 0.7457 | Val Balanced Acc: 0.2416
+
+Epoch 046 | Time: 4291.6s | Loss: 6641.2570
+Train Acc: 0.7449 | Train Balanced Acc: 0.2073
+Val Acc: 0.7467 | Val Balanced Acc: 0.2215
+
+Epoch 047 | Time: 4568.8s | Loss: 6653.0864
+Train Acc: 0.7450 | Train Balanced Acc: 0.2069
+Val Acc: 0.7480 | Val Balanced Acc: 0.2305
+
+Epoch 048 | Time: 4289.6s | Loss: 6634.7565
+Train Acc: 0.7448 | Train Balanced Acc: 0.2065
+Val Acc: 0.7469 | Val Balanced Acc: 0.2256
+
+Epoch 049 | Time: 4298.3s | Loss: 6629.2764
+Train Acc: 0.7451 | Train Balanced Acc: 0.2090
+Val Acc: 0.7454 | Val Balanced Acc: 0.2467
+
+Epoch 050 | Time: 4333.0s | Loss: 6632.8892
+Train Acc: 0.7450 | Train Balanced Acc: 0.2089
+Val Acc: 0.7459 | Val Balanced Acc: 0.2422
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_050.pt
+
+Epoch 051 | Time: 4297.8s | Loss: 6622.6378
+Train Acc: 0.7453 | Train Balanced Acc: 0.2095
+Val Acc: 0.7462 | Val Balanced Acc: 0.2302
+
+Epoch 052 | Time: 4308.6s | Loss: 6627.2429
+Train Acc: 0.7453 | Train Balanced Acc: 0.2086
+Val Acc: 0.7469 | Val Balanced Acc: 0.2185
+
+Epoch 053 | Time: 4394.3s | Loss: 6620.4896
+Train Acc: 0.7453 | Train Balanced Acc: 0.2137
+Val Acc: 0.7465 | Val Balanced Acc: 0.2382
+
+Epoch 054 | Time: 4297.0s | Loss: 6626.0047
+Train Acc: 0.7454 | Train Balanced Acc: 0.2084
+Val Acc: 0.7473 | Val Balanced Acc: 0.2412
+
+Epoch 055 | Time: 4298.0s | Loss: 6610.4413
+Train Acc: 0.7454 | Train Balanced Acc: 0.2121
+Val Acc: 0.7475 | Val Balanced Acc: 0.2264
+
+Epoch 056 | Time: 4311.2s | Loss: 6612.3767
+Train Acc: 0.7454 | Train Balanced Acc: 0.2138
+Val Acc: 0.7478 | Val Balanced Acc: 0.2216
+
+Epoch 057 | Time: 4307.0s | Loss: 6611.2975
+Train Acc: 0.7452 | Train Balanced Acc: 0.2099
+Val Acc: 0.7478 | Val Balanced Acc: 0.2443
+
+Epoch 058 | Time: 4305.2s | Loss: 6608.3178
+Train Acc: 0.7453 | Train Balanced Acc: 0.2117
+Val Acc: 0.7467 | Val Balanced Acc: 0.2318
+
+Epoch 059 | Time: 4307.6s | Loss: 6602.4766
+Train Acc: 0.7453 | Train Balanced Acc: 0.2127
+Val Acc: 0.7472 | Val Balanced Acc: 0.2429
+
+Epoch 060 | Time: 4303.6s | Loss: 6601.4698
+Train Acc: 0.7456 | Train Balanced Acc: 0.2132
+Val Acc: 0.7467 | Val Balanced Acc: 0.2344
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_060.pt
+
+Epoch 061 | Time: 4310.5s | Loss: 6602.5831
+Train Acc: 0.7454 | Train Balanced Acc: 0.2162
+Val Acc: 0.7473 | Val Balanced Acc: 0.2460
+
+Epoch 062 | Time: 4669.5s | Loss: 6598.2424
+Train Acc: 0.7458 | Train Balanced Acc: 0.2153
+Val Acc: 0.7474 | Val Balanced Acc: 0.2414
+
+Epoch 063 | Time: 4550.2s | Loss: 6597.5150
+Train Acc: 0.7456 | Train Balanced Acc: 0.2133
+Val Acc: 0.7474 | Val Balanced Acc: 0.2270
+
+Epoch 064 | Time: 4314.9s | Loss: 6590.2231
+Train Acc: 0.7458 | Train Balanced Acc: 0.2163
+Val Acc: 0.7470 | Val Balanced Acc: 0.2460
+
+Epoch 065 | Time: 4310.7s | Loss: 6596.6857
+Train Acc: 0.7456 | Train Balanced Acc: 0.2144
+Val Acc: 0.7478 | Val Balanced Acc: 0.2393
+
+Epoch 066 | Time: 4633.2s | Loss: 6586.0932
+Train Acc: 0.7458 | Train Balanced Acc: 0.2178
+Val Acc: 0.7474 | Val Balanced Acc: 0.2636
+
+Epoch 067 | Time: 4311.1s | Loss: 6587.8437
+Train Acc: 0.7455 | Train Balanced Acc: 0.2177
+Val Acc: 0.7459 | Val Balanced Acc: 0.2215
+
+Epoch 068 | Time: 4600.3s | Loss: 6587.1653
+Train Acc: 0.7458 | Train Balanced Acc: 0.2137
+Val Acc: 0.7469 | Val Balanced Acc: 0.2422
+
+Epoch 069 | Time: 4624.8s | Loss: 6578.7525
+Train Acc: 0.7455 | Train Balanced Acc: 0.2187
+Val Acc: 0.7480 | Val Balanced Acc: 0.2382
+
+Epoch 070 | Time: 4623.9s | Loss: 6580.4074
+Train Acc: 0.7458 | Train Balanced Acc: 0.2194
+Val Acc: 0.7488 | Val Balanced Acc: 0.2218
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_070.pt
+
+Epoch 071 | Time: 4311.2s | Loss: 6575.9039
+Train Acc: 0.7459 | Train Balanced Acc: 0.2196
+Val Acc: 0.7472 | Val Balanced Acc: 0.2479
+
+Epoch 072 | Time: 4605.3s | Loss: 6575.7805
+Train Acc: 0.7456 | Train Balanced Acc: 0.2109
+Val Acc: 0.7473 | Val Balanced Acc: 0.2352
+
+Epoch 073 | Time: 4313.8s | Loss: 6571.2802
+Train Acc: 0.7460 | Train Balanced Acc: 0.2212
+Val Acc: 0.7478 | Val Balanced Acc: 0.2335
+
+Epoch 074 | Time: 4319.0s | Loss: 6570.1566
+Train Acc: 0.7459 | Train Balanced Acc: 0.2188
+Val Acc: 0.7470 | Val Balanced Acc: 0.2278
+
+Epoch 075 | Time: 4306.3s | Loss: 6559.2691
+Train Acc: 0.7458 | Train Balanced Acc: 0.2226
+Val Acc: 0.7487 | Val Balanced Acc: 0.2377
+
+Epoch 076 | Time: 4318.5s | Loss: 6563.7820
+Train Acc: 0.7461 | Train Balanced Acc: 0.2221
+Val Acc: 0.7484 | Val Balanced Acc: 0.2243
+
+Epoch 077 | Time: 4391.3s | Loss: 6567.4335
+Train Acc: 0.7457 | Train Balanced Acc: 0.2228
+Val Acc: 0.7472 | Val Balanced Acc: 0.2611
+
+Epoch 078 | Time: 4317.2s | Loss: 6559.7482
+Train Acc: 0.7460 | Train Balanced Acc: 0.2235
+Val Acc: 0.7482 | Val Balanced Acc: 0.2499
+
+Epoch 079 | Time: 4318.3s | Loss: 6558.9789
+Train Acc: 0.7462 | Train Balanced Acc: 0.2239
+Val Acc: 0.7472 | Val Balanced Acc: 0.2472
+
+Epoch 080 | Time: 4311.5s | Loss: 6555.1577
+Train Acc: 0.7462 | Train Balanced Acc: 0.2239
+Val Acc: 0.7481 | Val Balanced Acc: 0.2362
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_080.pt
+
+Epoch 081 | Time: 4313.8s | Loss: 6557.2006
+Train Acc: 0.7460 | Train Balanced Acc: 0.2200
+Val Acc: 0.7475 | Val Balanced Acc: 0.2617
+
+Epoch 082 | Time: 4320.4s | Loss: 6556.3495
+Train Acc: 0.7462 | Train Balanced Acc: 0.2214
+Val Acc: 0.7480 | Val Balanced Acc: 0.2361
+
+Epoch 083 | Time: 4306.8s | Loss: 6559.4628
+Train Acc: 0.7461 | Train Balanced Acc: 0.2231
+Val Acc: 0.7481 | Val Balanced Acc: 0.2472
+
+Epoch 084 | Time: 4326.7s | Loss: 6554.4530
+Train Acc: 0.7462 | Train Balanced Acc: 0.2216
+Val Acc: 0.7489 | Val Balanced Acc: 0.2493
+
+Epoch 085 | Time: 4319.6s | Loss: 6550.2209
+Train Acc: 0.7464 | Train Balanced Acc: 0.2237
+Val Acc: 0.7475 | Val Balanced Acc: 0.2580
+
+Epoch 086 | Time: 4327.1s | Loss: 6543.1237
+Train Acc: 0.7463 | Train Balanced Acc: 0.2239
+Val Acc: 0.7477 | Val Balanced Acc: 0.2480
+
+Epoch 087 | Time: 4628.9s | Loss: 6540.3834
+Train Acc: 0.7462 | Train Balanced Acc: 0.2276
+Val Acc: 0.7491 | Val Balanced Acc: 0.2632
+
+Epoch 088 | Time: 4327.9s | Loss: 6548.0364
+Train Acc: 0.7463 | Train Balanced Acc: 0.2275
+Val Acc: 0.7480 | Val Balanced Acc: 0.2399
+
+Epoch 089 | Time: 4341.5s | Loss: 6541.6407
+Train Acc: 0.7462 | Train Balanced Acc: 0.2279
+Val Acc: 0.7481 | Val Balanced Acc: 0.2559
+
+Epoch 090 | Time: 4342.5s | Loss: 6549.5758
+Train Acc: 0.7465 | Train Balanced Acc: 0.2253
+Val Acc: 0.7470 | Val Balanced Acc: 0.2434
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_090.pt
+
+Epoch 091 | Time: 4342.7s | Loss: 6542.5996
+Train Acc: 0.7462 | Train Balanced Acc: 0.2235
+Val Acc: 0.7476 | Val Balanced Acc: 0.2488
+
+Epoch 092 | Time: 4353.0s | Loss: 6537.7273
+Train Acc: 0.7465 | Train Balanced Acc: 0.2280
+Val Acc: 0.7487 | Val Balanced Acc: 0.2407
+
+Epoch 093 | Time: 4340.5s | Loss: 6538.1363
+Train Acc: 0.7464 | Train Balanced Acc: 0.2267
+Val Acc: 0.7471 | Val Balanced Acc: 0.2461
+
+Epoch 094 | Time: 4349.1s | Loss: 6532.2494
+Train Acc: 0.7466 | Train Balanced Acc: 0.2281
+Val Acc: 0.7488 | Val Balanced Acc: 0.2335
+
+Epoch 095 | Time: 4521.1s | Loss: 6533.0386
+Train Acc: 0.7465 | Train Balanced Acc: 0.2266
+Val Acc: 0.7486 | Val Balanced Acc: 0.2447
+
+Epoch 096 | Time: 4585.5s | Loss: 6530.2538
+Train Acc: 0.7463 | Train Balanced Acc: 0.2271
+Val Acc: 0.7472 | Val Balanced Acc: 0.2595
+
+Epoch 097 | Time: 4349.0s | Loss: 6525.0767
+Train Acc: 0.7467 | Train Balanced Acc: 0.2300
+Val Acc: 0.7479 | Val Balanced Acc: 0.2645
+
+Epoch 098 | Time: 4362.9s | Loss: 6534.2096
+Train Acc: 0.7465 | Train Balanced Acc: 0.2275
+Val Acc: 0.7491 | Val Balanced Acc: 0.2556
+
+Epoch 099 | Time: 4361.5s | Loss: 6533.7493
+Train Acc: 0.7466 | Train Balanced Acc: 0.2298
+Val Acc: 0.7483 | Val Balanced Acc: 0.2550
+
+Epoch 100 | Time: 4426.5s | Loss: 6521.7027
+Train Acc: 0.7468 | Train Balanced Acc: 0.2295
+Val Acc: 0.7472 | Val Balanced Acc: 0.2501
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_100.pt
+Model Accuracy: 74.84%
