@@ -1,0 +1,172 @@
+Requirement already satisfied: torchvision in ./y/envs/thesis_env_310/lib/python3.10/site-packages (0.20.1+cu121)
+Requirement already satisfied: tqdm in ./y/envs/thesis_env_310/lib/python3.10/site-packages (4.67.1)
+Requirement already satisfied: scikit-learn in ./y/envs/thesis_env_310/lib/python3.10/site-packages (1.6.1)
+Requirement already satisfied: torchsummary in ./y/envs/thesis_env_310/lib/python3.10/site-packages (1.5.1)
+Requirement already satisfied: numpy in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (2.1.2)
+Requirement already satisfied: torch==2.5.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (2.5.1+cu121)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torchvision) (11.0.0)
+Requirement already satisfied: filelock in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (4.12.2)
+Requirement already satisfied: networkx in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.3)
+Requirement already satisfied: jinja2 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.1.4)
+Requirement already satisfied: fsspec in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (2024.6.1)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: triton==3.1.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (3.1.0)
+Requirement already satisfied: sympy==1.13.1 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from torch==2.5.1->torchvision) (1.13.1)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch==2.5.1->torchvision) (12.1.105)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from sympy==1.13.1->torch==2.5.1->torchvision) (1.3.0)
+Requirement already satisfied: scipy>=1.6.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from scikit-learn) (1.15.2)
+Requirement already satisfied: joblib>=1.2.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from scikit-learn) (1.4.2)
+Requirement already satisfied: threadpoolctl>=3.1.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./y/envs/thesis_env_310/lib/python3.10/site-packages (from jinja2->torch==2.5.1->torchvision) (2.1.5)
+Using device: cuda
+Using 1 GPUs.
+MODEL SUMMARY
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 128, 128]           9,408
+       BatchNorm2d-2         [-1, 64, 128, 128]             128
+              ReLU-3         [-1, 64, 128, 128]               0
+         MaxPool2d-4           [-1, 64, 64, 64]               0
+            Conv2d-5           [-1, 64, 64, 64]          36,864
+       BatchNorm2d-6           [-1, 64, 64, 64]             128
+              ReLU-7           [-1, 64, 64, 64]               0
+            Conv2d-8           [-1, 64, 64, 64]          36,864
+       BatchNorm2d-9           [-1, 64, 64, 64]             128
+             ReLU-10           [-1, 64, 64, 64]               0
+       BasicBlock-11           [-1, 64, 64, 64]               0
+           Conv2d-12           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-13           [-1, 64, 64, 64]             128
+             ReLU-14           [-1, 64, 64, 64]               0
+           Conv2d-15           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-16           [-1, 64, 64, 64]             128
+             ReLU-17           [-1, 64, 64, 64]               0
+       BasicBlock-18           [-1, 64, 64, 64]               0
+           Conv2d-19          [-1, 128, 32, 32]          73,728
+      BatchNorm2d-20          [-1, 128, 32, 32]             256
+             ReLU-21          [-1, 128, 32, 32]               0
+           Conv2d-22          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-23          [-1, 128, 32, 32]             256
+           Conv2d-24          [-1, 128, 32, 32]           8,192
+      BatchNorm2d-25          [-1, 128, 32, 32]             256
+             ReLU-26          [-1, 128, 32, 32]               0
+       BasicBlock-27          [-1, 128, 32, 32]               0
+           Conv2d-28          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-29          [-1, 128, 32, 32]             256
+             ReLU-30          [-1, 128, 32, 32]               0
+           Conv2d-31          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-32          [-1, 128, 32, 32]             256
+             ReLU-33          [-1, 128, 32, 32]               0
+       BasicBlock-34          [-1, 128, 32, 32]               0
+           Conv2d-35          [-1, 256, 16, 16]         294,912
+      BatchNorm2d-36          [-1, 256, 16, 16]             512
+             ReLU-37          [-1, 256, 16, 16]               0
+           Conv2d-38          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-39          [-1, 256, 16, 16]             512
+           Conv2d-40          [-1, 256, 16, 16]          32,768
+      BatchNorm2d-41          [-1, 256, 16, 16]             512
+             ReLU-42          [-1, 256, 16, 16]               0
+       BasicBlock-43          [-1, 256, 16, 16]               0
+           Conv2d-44          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-45          [-1, 256, 16, 16]             512
+             ReLU-46          [-1, 256, 16, 16]               0
+           Conv2d-47          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-48          [-1, 256, 16, 16]             512
+             ReLU-49          [-1, 256, 16, 16]               0
+       BasicBlock-50          [-1, 256, 16, 16]               0
+           Conv2d-51            [-1, 512, 8, 8]       1,179,648
+      BatchNorm2d-52            [-1, 512, 8, 8]           1,024
+             ReLU-53            [-1, 512, 8, 8]               0
+           Conv2d-54            [-1, 512, 8, 8]       2,359,296
+      BatchNorm2d-55            [-1, 512, 8, 8]           1,024
+           Conv2d-56            [-1, 512, 8, 8]         131,072
+      BatchNorm2d-57            [-1, 512, 8, 8]           1,024
+             ReLU-58            [-1, 512, 8, 8]               0
+       BasicBlock-59            [-1, 512, 8, 8]               0
+           Conv2d-60            [-1, 512, 8, 8]       2,359,296
+      BatchNorm2d-61            [-1, 512, 8, 8]           1,024
+             ReLU-62            [-1, 512, 8, 8]               0
+           Conv2d-63            [-1, 512, 8, 8]       2,359,296
+      BatchNorm2d-64            [-1, 512, 8, 8]           1,024
+             ReLU-65            [-1, 512, 8, 8]               0
+       BasicBlock-66            [-1, 512, 8, 8]               0
+AdaptiveAvgPool2d-67            [-1, 512, 1, 1]               0
+           Linear-68                   [-1, 47]          24,111
+================================================================
+Total params: 11,200,623
+Trainable params: 11,200,623
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.75
+Forward/backward pass size (MB): 82.00
+Params size (MB): 42.73
+Estimated Total Size (MB): 125.48
+----------------------------------------------------------------
+Loaded checkpoint from epoch 100
+
+=== Classification Report ===
+                           precision    recall  f1-score   support
+
+                addisplay       0.54      0.47      0.50      3491
+        addisplay++adware       0.25      0.15      0.19        59
+                   adload       0.66      0.84      0.74        67
+                  adsware       0.26      0.11      0.15       530
+                   adware       0.90      0.93      0.91    176892
+           adware++adware       0.64      0.34      0.45       501
+  adware++grayware++virus       0.43      0.45      0.44       167
+            adware++virus       0.52      0.40      0.45        55
+                adwareare       0.48      0.39      0.43        31
+                 backdoor       0.26      0.20      0.22       121
+           banker++trojan       0.67      0.56      0.61       221
+                   benign       0.78      0.71      0.74     15824
+                    click       0.20      0.86      0.33        22
+                  clicker       0.12      0.17      0.14        53
+          clicker++trojan       0.92      0.90      0.91       573
+     clickfraud++riskware       0.42      0.95      0.59        74
+               downloader       0.56      0.70      0.62       999
+          dropper++trojan       0.41      0.42      0.41       119
+                  exploit       0.81      0.85      0.83      1116
+                fakeangry       0.59      0.38      0.46        42
+                  fakeapp       0.21      0.41      0.27        85
+          fakeapp++trojan       0.35      0.53      0.42        51
+         fakeinst++trojan       0.77      0.62      0.69       143
+                     gray       0.35      0.28      0.31       185
+                 hacktool       0.32      0.34      0.33       109
+                  malware       0.38      0.25      0.30       501
+             malware++trj       0.73      0.98      0.83       122
+                  monitor       0.89      0.95      0.92       271
+           ransom++trojan       0.86      0.82      0.84       231
+risktool++riskware++virus       0.50      0.27      0.35        30
+                 riskware       0.65      0.53      0.58      6353
+        riskware++smssend       0.39      0.39      0.39        49
+                      rog       0.79      0.65      0.71       395
+          rootnik++trojan       0.15      0.18      0.16        45
+                  smssend       0.75      0.67      0.70       653
+          smssend++trojan       0.64      0.50      0.56       859
+                      spr       0.63      0.55      0.59      2765
+                      spy       0.58      0.74      0.65       329
+              spy++trojan       0.29      0.38      0.33        24
+                  spyware       0.65      0.62      0.63      1318
+                      trj       0.45      0.35      0.39       188
+                     troj       0.36      0.24      0.29       662
+                   trojan       0.65      0.60      0.62     35851
+         trojandownloader       0.49      0.43      0.46       113
+            trojandropper       0.46      0.46      0.46        35
+                    virus       0.80      0.63      0.71        38
+                     worm       0.17      0.14      0.15        44
+
+                 accuracy                           0.83    252406
+                macro avg       0.52      0.52      0.51    252406
+             weighted avg       0.83      0.83      0.83    252406
+

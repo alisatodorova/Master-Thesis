@@ -1,0 +1,211 @@
+Using DataParallel on GPUs: [0, 1]
+GPU 0: NVIDIA GeForce RTX 4060 Ti with 8187.5 MB memory
+GPU 1: NVIDIA GeForce RTX 4060 Ti with 8187.38 MB memory
+Using device: cuda
+DATASET SUMMARY
+Number of classes        : 47
+Class labels             : ['addisplay', 'addisplay++adware', 'adload', 'adsware', 'adware', 'adware++adware', 'adware++grayware++virus', 'adware++virus', 'adwareare', 'backdoor', 'banker++trojan', 'benign', 'click', 'clicker', 'clicker++trojan', 'clickfraud++riskware', 'downloader', 'dropper++trojan', 'exploit', 'fakeangry', 'fakeapp', 'fakeapp++trojan', 'fakeinst++trojan', 'gray', 'hacktool', 'malware', 'malware++trj', 'monitor', 'ransom++trojan', 'risktool++riskware++virus', 'riskware', 'riskware++smssend', 'rog', 'rootnik++trojan', 'smssend', 'smssend++trojan', 'spr', 'spy', 'spy++trojan', 'spyware', 'trj', 'troj', 'trojan', 'trojandownloader', 'trojandropper', 'virus', 'worm']
+Train samples            : 883416
+Validation samples       : 126202
+Test samples             : 252406
+Train class distribution : {0: 12221, 1: 206, 2: 233, 3: 1856, 4: 619118, 5: 1752, 6: 585, 7: 192, 8: 106, 9: 421, 10: 774, 11: 55383, 12: 79, 13: 186, 14: 2007, 15: 258, 16: 3498, 17: 414, 18: 3907, 19: 148, 20: 298, 21: 179, 22: 503, 23: 645, 24: 379, 25: 1754, 26: 426, 27: 950, 28: 807, 29: 106, 30: 22236, 31: 173, 32: 1382, 33: 156, 34: 2286, 35: 3006, 36: 9675, 37: 1152, 38: 83, 39: 4613, 40: 658, 41: 2316, 42: 125478, 43: 398, 44: 125, 45: 134, 46: 154}
+--------------------------------------------------
+Using 2 GPUs.
+MODEL SUMMARY
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 128, 128]           9,408
+            Conv2d-2         [-1, 64, 128, 128]           9,408
+       BatchNorm2d-3         [-1, 64, 128, 128]             128
+       BatchNorm2d-4         [-1, 64, 128, 128]             128
+              ReLU-5         [-1, 64, 128, 128]               0
+              ReLU-6         [-1, 64, 128, 128]               0
+         MaxPool2d-7           [-1, 64, 64, 64]               0
+         MaxPool2d-8           [-1, 64, 64, 64]               0
+            Conv2d-9           [-1, 64, 64, 64]          36,864
+           Conv2d-10           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-11           [-1, 64, 64, 64]             128
+      BatchNorm2d-12           [-1, 64, 64, 64]             128
+             ReLU-13           [-1, 64, 64, 64]               0
+             ReLU-14           [-1, 64, 64, 64]               0
+           Conv2d-15           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-16           [-1, 64, 64, 64]             128
+           Conv2d-17           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-18           [-1, 64, 64, 64]             128
+             ReLU-19           [-1, 64, 64, 64]               0
+       BasicBlock-20           [-1, 64, 64, 64]               0
+             ReLU-21           [-1, 64, 64, 64]               0
+       BasicBlock-22           [-1, 64, 64, 64]               0
+           Conv2d-23           [-1, 64, 64, 64]          36,864
+           Conv2d-24           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-25           [-1, 64, 64, 64]             128
+             ReLU-26           [-1, 64, 64, 64]               0
+      BatchNorm2d-27           [-1, 64, 64, 64]             128
+             ReLU-28           [-1, 64, 64, 64]               0
+           Conv2d-29           [-1, 64, 64, 64]          36,864
+           Conv2d-30           [-1, 64, 64, 64]          36,864
+      BatchNorm2d-31           [-1, 64, 64, 64]             128
+      BatchNorm2d-32           [-1, 64, 64, 64]             128
+             ReLU-33           [-1, 64, 64, 64]               0
+       BasicBlock-34           [-1, 64, 64, 64]               0
+             ReLU-35           [-1, 64, 64, 64]               0
+       BasicBlock-36           [-1, 64, 64, 64]               0
+           Conv2d-37          [-1, 128, 32, 32]          73,728
+           Conv2d-38          [-1, 128, 32, 32]          73,728
+      BatchNorm2d-39          [-1, 128, 32, 32]             256
+      BatchNorm2d-40          [-1, 128, 32, 32]             256
+             ReLU-41          [-1, 128, 32, 32]               0
+             ReLU-42          [-1, 128, 32, 32]               0
+           Conv2d-43          [-1, 128, 32, 32]         147,456
+           Conv2d-44          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-45          [-1, 128, 32, 32]             256
+      BatchNorm2d-46          [-1, 128, 32, 32]             256
+           Conv2d-47          [-1, 128, 32, 32]           8,192
+           Conv2d-48          [-1, 128, 32, 32]           8,192
+      BatchNorm2d-49          [-1, 128, 32, 32]             256
+      BatchNorm2d-50          [-1, 128, 32, 32]             256
+             ReLU-51          [-1, 128, 32, 32]               0
+       BasicBlock-52          [-1, 128, 32, 32]               0
+           Conv2d-53          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-54          [-1, 128, 32, 32]             256
+             ReLU-55          [-1, 128, 32, 32]               0
+       BasicBlock-56          [-1, 128, 32, 32]               0
+             ReLU-57          [-1, 128, 32, 32]               0
+           Conv2d-58          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-59          [-1, 128, 32, 32]             256
+             ReLU-60          [-1, 128, 32, 32]               0
+       BasicBlock-61          [-1, 128, 32, 32]               0
+           Conv2d-62          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-63          [-1, 128, 32, 32]             256
+             ReLU-64          [-1, 128, 32, 32]               0
+           Conv2d-65          [-1, 128, 32, 32]         147,456
+      BatchNorm2d-66          [-1, 128, 32, 32]             256
+           Conv2d-67          [-1, 256, 16, 16]         294,912
+             ReLU-68          [-1, 128, 32, 32]               0
+       BasicBlock-69          [-1, 128, 32, 32]               0
+      BatchNorm2d-70          [-1, 256, 16, 16]             512
+             ReLU-71          [-1, 256, 16, 16]               0
+           Conv2d-72          [-1, 256, 16, 16]         294,912
+      BatchNorm2d-73          [-1, 256, 16, 16]             512
+             ReLU-74          [-1, 256, 16, 16]               0
+           Conv2d-75          [-1, 256, 16, 16]         589,824
+           Conv2d-76          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-77          [-1, 256, 16, 16]             512
+      BatchNorm2d-78          [-1, 256, 16, 16]             512
+           Conv2d-79          [-1, 256, 16, 16]          32,768
+           Conv2d-80          [-1, 256, 16, 16]          32,768
+      BatchNorm2d-81          [-1, 256, 16, 16]             512
+      BatchNorm2d-82          [-1, 256, 16, 16]             512
+             ReLU-83          [-1, 256, 16, 16]               0
+       BasicBlock-84          [-1, 256, 16, 16]               0
+             ReLU-85          [-1, 256, 16, 16]               0
+       BasicBlock-86          [-1, 256, 16, 16]               0
+           Conv2d-87          [-1, 256, 16, 16]         589,824
+           Conv2d-88          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-89          [-1, 256, 16, 16]             512
+             ReLU-90          [-1, 256, 16, 16]               0
+           Conv2d-91          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-92          [-1, 256, 16, 16]             512
+      BatchNorm2d-93          [-1, 256, 16, 16]             512
+             ReLU-94          [-1, 256, 16, 16]               0
+             ReLU-95          [-1, 256, 16, 16]               0
+       BasicBlock-96          [-1, 256, 16, 16]               0
+           Conv2d-97          [-1, 256, 16, 16]         589,824
+      BatchNorm2d-98          [-1, 256, 16, 16]             512
+             ReLU-99          [-1, 256, 16, 16]               0
+      BasicBlock-100          [-1, 256, 16, 16]               0
+          Conv2d-101            [-1, 512, 8, 8]       1,179,648
+          Conv2d-102            [-1, 512, 8, 8]       1,179,648
+     BatchNorm2d-103            [-1, 512, 8, 8]           1,024
+     BatchNorm2d-104            [-1, 512, 8, 8]           1,024
+            ReLU-105            [-1, 512, 8, 8]               0
+            ReLU-106            [-1, 512, 8, 8]               0
+          Conv2d-107            [-1, 512, 8, 8]       2,359,296
+          Conv2d-108            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-109            [-1, 512, 8, 8]           1,024
+     BatchNorm2d-110            [-1, 512, 8, 8]           1,024
+          Conv2d-111            [-1, 512, 8, 8]         131,072
+     BatchNorm2d-112            [-1, 512, 8, 8]           1,024
+            ReLU-113            [-1, 512, 8, 8]               0
+      BasicBlock-114            [-1, 512, 8, 8]               0
+          Conv2d-115            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-116            [-1, 512, 8, 8]           1,024
+            ReLU-117            [-1, 512, 8, 8]               0
+          Conv2d-118            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-119            [-1, 512, 8, 8]           1,024
+            ReLU-120            [-1, 512, 8, 8]               0
+      BasicBlock-121            [-1, 512, 8, 8]               0
+          Conv2d-122            [-1, 512, 8, 8]         131,072
+     BatchNorm2d-123            [-1, 512, 8, 8]           1,024
+            ReLU-124            [-1, 512, 8, 8]               0
+      BasicBlock-125            [-1, 512, 8, 8]               0
+          Conv2d-126            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-127            [-1, 512, 8, 8]           1,024
+            ReLU-128            [-1, 512, 8, 8]               0
+          Conv2d-129            [-1, 512, 8, 8]       2,359,296
+     BatchNorm2d-130            [-1, 512, 8, 8]           1,024
+            ReLU-131            [-1, 512, 8, 8]               0
+      BasicBlock-132            [-1, 512, 8, 8]               0
+AdaptiveAvgPool2d-133            [-1, 512, 1, 1]               0
+AdaptiveAvgPool2d-134            [-1, 512, 1, 1]               0
+          Linear-135                   [-1, 47]          24,111
+          Linear-136                   [-1, 47]          24,111
+          ResNet-137                   [-1, 47]               0
+          ResNet-138                   [-1, 47]               0
+================================================================
+Total params: 22,401,246
+Trainable params: 22,401,246
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.75
+Forward/backward pass size (MB): 164.01
+Params size (MB): 85.45
+Estimated Total Size (MB): 250.21
+----------------------------------------------------------------
+Loaded epoch 40
+
+Epoch 041 | Time: 3931.6s | Loss: 2957.8293
+Train Acc: 0.8564 | Train Balanced Acc: 0.6453
+Val   Acc: 0.8258 | Val   Balanced Acc: 0.4936
+
+Epoch 042 | Time: 3915.3s | Loss: 2887.5834
+Train Acc: 0.8595 | Train Balanced Acc: 0.6533
+Val   Acc: 0.8175 | Val   Balanced Acc: 0.4999
+
+Epoch 043 | Time: 3915.7s | Loss: 2823.9355
+Train Acc: 0.8617 | Train Balanced Acc: 0.6611
+Val   Acc: 0.8188 | Val   Balanced Acc: 0.5111
+
+Epoch 044 | Time: 3951.8s | Loss: 2752.3395
+Train Acc: 0.8645 | Train Balanced Acc: 0.6725
+Val   Acc: 0.8249 | Val   Balanced Acc: 0.5043
+
+Epoch 045 | Time: 9135.8s | Loss: 2689.6236
+Train Acc: 0.8668 | Train Balanced Acc: 0.6844
+Val   Acc: 0.8234 | Val   Balanced Acc: 0.5046
+
+Epoch 046 | Time: 3894.0s | Loss: 2626.4244
+Train Acc: 0.8696 | Train Balanced Acc: 0.6894
+Val   Acc: 0.8272 | Val   Balanced Acc: 0.4889
+
+Epoch 047 | Time: 3884.1s | Loss: 2565.2528
+Train Acc: 0.8725 | Train Balanced Acc: 0.6994
+Val   Acc: 0.8260 | Val   Balanced Acc: 0.5021
+
+Epoch 048 | Time: 4639.9s | Loss: 2511.4321
+Train Acc: 0.8748 | Train Balanced Acc: 0.7056
+Val   Acc: 0.8238 | Val   Balanced Acc: 0.5139
+
+Epoch 049 | Time: 5024.3s | Loss: 2455.7449
+Train Acc: 0.8772 | Train Balanced Acc: 0.7112
+Val   Acc: 0.8201 | Val   Balanced Acc: 0.5046
+
+Epoch 050 | Time: 5396.3s | Loss: 2401.4433
+Train Acc: 0.8793 | Train Balanced Acc: 0.7192
+Val   Acc: 0.8223 | Val   Balanced Acc: 0.5235
+Checkpoint saved at: C:\Users\Boss\Downloads\malnet-images\checkpoints\epoch_050.pt
+
+Epoch 051 | Time: 5385.9s | Loss: 2349.9386
+Train Acc: 0.8819 | Train Balanced Acc: 0.7231
+Val   Acc: 0.8230 | Val   Balanced Acc: 0.5035
